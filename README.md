@@ -3,4 +3,4 @@ GVSU Senior Project Created by Tyler Hay, AJ Natzic, and Dillon Viilo
 
 Local environment variables:
 
-Port number: 8887 (Not using this port number when developing locally will break Google Sign-In)
+* You must use this URL to develop on local environment: http://localhost:8887, specifically with port number 8887 (Google Sign-In will not work otherwise).
