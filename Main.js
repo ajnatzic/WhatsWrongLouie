@@ -18,25 +18,54 @@ var obj = {AthName: "Louie",
  };
 
 
+const { MongoClient } = require("mongodb");
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://test:test@cluster0.ambmi.mongodb.net/user_test?retryWrites=true&w=majority";
+// Connection URI (Authenticate by connecting to admin db, then we can switch to whatever db we want)
+const uri =
+"mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/admin?retryWrites=true&w=majority";
+
+// Variable to hold database name to use
+const dbName = "user_test";
+
+// Create a new MongoClient
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 
+async function run() {
 
-client.connect(err => {
-  const collection = client.db("user_test").collection("athlete");
-  // perform actions on the collection object
+  try {
+    // Connect the client to the server
+    await client.connect();
 
-    try{
-        collection.insertOne(obj);
-    }
-    finally{
-        client.close();
-    }
+    // Establish and verify connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Connected successfully to server");
+
+    //var to switch to user_test db.
+    const db = client.db(dbName);
+
+    const collection = db.collection("athlete");
+
+    // Inserting a single object (default athlete created above)
+    const ath = await collection.insertOne(obj);
+
+    // Finding the single object we just inserted to verify
+    const myAth = await collection.findOne();
+
+    //Print athlete to console
+    console.log(myAth);
+
 
     
-});
+  } 
+  catch (err){
+    await client.close(); 
+  }
+  finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
 
 
 
