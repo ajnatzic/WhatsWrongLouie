@@ -36,6 +36,8 @@
   }
 
   </script>
+
+
   <div class="container" style="max-width:600px">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="#">Whats wrong with ???</a>
@@ -57,6 +59,7 @@
 			</div>
 		</nav>
 
+    <!-- Begin Athlete Creation Screen  -->
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" >Name</span>
@@ -68,8 +71,8 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Gender</span>
       </div>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
+      <select id="gender" class="form-control">
+        <option selected></option>
         <option>Male</option>
         <option>Female</option>
       </select>
@@ -79,7 +82,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Race</span>
       </div>
-      <select id="inputState" class="form-control">
+      <select id="race" class="form-control">
         <option selected>Choose...</option>
         <option>American Indian or Alaska Native</option>
         <option>Asian</option>
@@ -92,18 +95,50 @@
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text">Skin Color</span>
+        <span class="input-group-text">Pant Color</span>
       </div>
-      <input type="textarea" id="skinColor" class="form-control modifiedInfo"  aria-label="Username" aria-describedby="basic-addon1">
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Blue</option>
+        <option>Red</option>
+        <option>Black</option>
+        <option>Yellow</option>
+        <option>Purple</option>
+        <option>White</option>
+      </select>
     </div>
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text">Shirt Color</span>
       </div>
-      <input type="text" id="shirtColor" class="form-control modifiedInfo"  aria-label="Username" aria-describedby="basic-addon1">
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Blue</option>
+        <option>Red</option>
+        <option>Black</option>
+        <option>Yellow</option>
+        <option>Purple</option>
+        <option>White</option>
+      </select>
     </div>
 
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Pant Color</span>
+      </div>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Blue</option>
+        <option>Red</option>
+        <option>Black</option>
+        <option>Yellow</option>
+        <option>Purple</option>
+        <option>White</option>
+      </select>
+    </div>
+
+    <!-- Pull from the database for this one? -->
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text">Prior Injury</span>
