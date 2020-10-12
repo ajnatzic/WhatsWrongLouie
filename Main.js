@@ -208,7 +208,7 @@ async function setID(cName){
     }
     else if (cName.localeCompare("athlete") == 0){
 
-      ID = 20000000 + collection.countDocuments();
+      ID = 20000000 + await collection.countDocuments();
 
       //gather list of IDs from collection objects
       duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
@@ -265,10 +265,10 @@ async function setID(cName){
 
 }
 
-//NOTE: SetID returns Promise instead of value. Needs looking into.
-let ID = setID("athlete");
+async function run(){
 
-console.log(ID);
+  var ID = await setID("athlete");
+  console.log(ID);
+}
 
-newAth = createAthlete("Tyler", "White", "Male", "FFFFFF", "FF0000", "0000FF", 200001);
-console.log(newAth);
+run();
