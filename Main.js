@@ -6,10 +6,12 @@
  */
 
 
-
+// TODO: Separate data gathering and data showing functions so that
+//       code will run in the HTML page.
 
 const { MongoClient } = require("mongodb");
 const { exit } = require("process");
+
 
 // Connection URI (Authenticate by connecting to admin db, then we can switch to whatever db we want)
 const uri =
@@ -20,6 +22,8 @@ const dbName = "user_test";
 
 // Create a new MongoClient
 const client = new MongoClient(uri, { useUnifiedTopology: true });
+
+let athSubmitBtn = document.querySelector("#submitButton");
 
 /**
  *  Function used to push an object into a collection within the database.
@@ -208,7 +212,7 @@ async function setID(cName){
     }
     else if (cName.localeCompare("athlete") == 0){
 
-      ID = 20000000 + collection.countDocuments();
+      ID = 20000000 + await collection.countDocuments();
 
       //gather list of IDs from collection objects
       duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
@@ -265,10 +269,37 @@ async function setID(cName){
 
 }
 
-//NOTE: SetID returns Promise instead of value. Needs looking into.
-let ID = setID("athlete");
+/**
+ *  Functions for linking HTML side
+ */
 
-console.log(ID);
+/**
+ * On click function for the submit button in the
+ * Athlete creation menu. Function gathers all of the
+ * user input options from the text/choice boxes and creates
+ * a new athlete. 
+ */
+athSubmitBtn.onclick = function(){
 
-newAth = createAthlete("Tyler", "White", "Male", "FFFFFF", "FF0000", "0000FF", 200001);
-console.log(newAth);
+  let inName = document.getElementById("name");
+  let inGender = document.getElementById("gender");
+  let inRace = document.getElementById("race");
+  let inSkColor = document.getElementById("skinColor");
+  let inShColor = document.getElementById("shirtColor");
+  let inPantColor = document.getElementById("pantColor");
+  let inPriorInj = document.getElementById("priorInjury");
+
+  athlete = createAthlete(inName,
+    inRace, inGender, inSkColor, inShColor, inPantColor,
+    inPriorInj);
+
+  console.log(athlete);
+}
+
+async function run(){
+
+  var ID = await setID("athlete");
+  console.log(ID);
+}
+
+run();
