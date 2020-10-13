@@ -1,0 +1,60 @@
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+}
+
+.header h1 {
+  font-size: 1vw;
+  margin: 0.5em;
+  margin-right: 15%;
+  margin-left: 10%;
+}
+
+.header button {
+  font-size: 1vw;
+  margin: 0.5em;
+  margin-right: 15%;
+  margin-left: 10%;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+.header button:hover {
+  background-color: white;
+  color: black;
+}
+
+.main {
+  display: flex;
+}
+
+.mainmenu {
+  width: 20%;
+  padding: 1vw;
+  border-right: 5px solid black;
+}
+
+.mainmenu button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 2vw;
+}
+.mainmenu button:hover {
+  background-color: white;
+  color: black;
+}
+
+.mainmenu h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.mainscreen {
+  width: 80%;
+  padding: 5px;
+}
