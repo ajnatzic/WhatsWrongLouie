@@ -6,98 +6,113 @@
  */
 
 
-// TODO: Separate data gathering and data showing functions so that
-//       code will run in the HTML page.
-
-const { MongoClient } = require("mongodb");
-const { exit } = require("process");
-
 
 // Connection URI (Authenticate by connecting to admin db, then we can switch to whatever db we want)
 const uri =
 "mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/admin?retryWrites=true&w=majority";
 
-// Variable to hold database name to use
-const dbName = "user_test";
-
-// Create a new MongoClient
-const client = new MongoClient(uri, { useUnifiedTopology: true });
-
-let athSubmitBtn = document.querySelector("#submitButton");
 
 /**
- *  Function used to push an object into a collection within the database.
+ * MongoDB integration using Mongoose.
  * 
- *  @param obj: The object that's being inserted into the database collection
- *         cName: String that contains the collection name
+ * Following guide: https://www.geeksforgeeks.org/signup-form-using-nodejs-and-mongodb/
+ * to connect HTML front end with our MongoDB database. 
  */
-async function dbPush(obj, cName) {
 
-  try {
-    // Connect the client to the server
-    await client.connect();
+ //Mongoose Initialization
+var express = require("express");
+var bodyParser = require("body-parser");
 
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
+const mongoose = require('mongoose');
+mongoose.connect(uri, {useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.log.bind(console,  "Connection Error"));
+db.once('open', function(callback){
+  console.log("connection successful");
+})
 
-    //var to switch to user_test db.
-    const db = client.db(dbName);
+var Main =  express();
+Main.use(express.static(__dirname));
 
-    const collection = db.collection(cName);
+Main.use(bodyParser.json());
+Main.use(express.static('public'));
+Main.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-    // Inserting a single object
-    await collection.insertOne(obj);
-    console.log("Push complete");
+
+/**
+ * Function to push an athlete to the DB using Mongoose.
+ * Collects data from the index.html athlete creation section and
+ * uses those inputs to create an athlete object, then the object is pushed
+ * to the user_test => athlete collection.
+ * 
+ */
+Main.post('/ath_create', async function(req, res){
+
+    //gathering user input from athlete creation screen
+    var inID = await setID("athlete");
+    var inName = req.body.name;
+    var inGender = req.body.gender;
+    var inRace = req.body.race;
+    var inSkColor = req.body.skinColor;
+    var inShColor = req.body.shirtColor;
+    var inPantColor = req.body.pantColor;
+    var inPriorInj = req.body.priorInjury;
+
+    //Create "athlete" object using the input data
+    var ath = {
+      AID: inID,
+      AthName: inName,
+      Race: inRace,
+      Gender: inGender,
+      SkColor: inSkColor,
+      TShColor: inShColor, 
+      PantColor: inPantColor,
+      PInjury: inPriorInj
+      }
+
+    //insert the athlete into the athlete collection.
+    db.collection('athlete').insertOne(ath, function(err, collection){
+      if(err) throw err;
+      console.log("Athlete inserted successfully");
+    });
+
+      return res.redirect('index.html');
+
+})
+
+//DB Connection initialization
+Main.get('/', function(req, res){
+  res.set({
+    'Access-control-Allow-Origin': '*'
+  });
+  return res.redirect('index.html');
+}).listen(5500);
+
+console.log("Server listening at port 5500");
 
 
-    
-  } 
-  catch (err){
-    await client.close(); 
-  }
-  finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-
-async function dbPull(cName){
+//TODO: Restructure to work with mongoose
+function dbPull(cName){
   
-  try {
+
 
     //list to collect contents
     var list = [];
-    // Connect the client to the server
-    await client.connect();
 
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
-
-    //var to switch to user_test db.
-    const db = client.db(dbName);
 
     const collection = db.collection(cName);
 
     // pulling information from collection
-    list = await collection.find().toArray();
+    list = collection.find().toArray();
 
     console.log(list);
 
-    
-  } 
-  catch (err){
-    await client.close(); 
-  }
-  finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-    return list
-  }
 
 }
 
+// TODO: Restructure to work with Mongoose
 async function dbDeleteByID(cName, ID){
   try {
 
@@ -131,26 +146,6 @@ async function dbDeleteByID(cName, ID){
 
 
 /**
- *  Function used for athlete object creation
- */
-async function createAthlete(name, race, gender, skcolor, tshcolor, pantcolor, pinjury) {
-
-    //Creating "Athlete object" that will be inserted into user_test->athlete
-  var obj = {
-  AID: await setID("athlete"),
-  AthName: name,
-  Race: race,
-  Gender: gender,
-  SkColor: skcolor,
-  TShColor: tshcolor, 
-  PantColor: pantcolor,
-  PInjury: pinjury
-  };
-
-  return obj;
-}
-
-/**
  *  Function used to create an object ID that matches the database parameters.
  *  Based on the collection name being passed in, the function will search said
  *  collection to get the total number of objects in the collection, which will
@@ -170,136 +165,84 @@ async function createAthlete(name, race, gender, skcolor, tshcolor, pantcolor, p
  */
 async function setID(cName){
 
-  try {
-
     // Int var that will be populated with the specific ID number for an object.
     var ID = 0;
 
     //Array that will be used to check for duplicate IDs.
     var duplicates = []; 
 
-    // Connect the client to the server
-    await client.connect();
-
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
-
-    //var to switch to user_test db.
-    const db = await client.db(dbName);
-
     //var to focus on the specific collection passed in
-    const collection = await db.collection(cName);
+    const collection = db.collection(cName);
 
-    // Compare input to collection names to determine which collection to count from.
-    if (cName.localeCompare("SUser") == 0){
+    try{
+      // Compare input to collection names to determine which collection to count from.
+      if (cName.localeCompare("SUser") == 0){
 
-      // set the ID based on the number of objects in the collection.
-      ID = 30000000 + await collection.countDocuments();
-      
-      //gather list of IDs from collection objects
-      duplicates = await collection.find().project({SUID: 1} ).map(x => x.SUID).toArray();
+        // set the ID based on the number of objects in the collection.
+        ID = 30000000 + await collection.countDocuments();
+        
+        //gather list of IDs from collection objects
+        duplicates = await collection.find().project({SUID: 1} ).map(x => x.SUID).toArray();
 
-      console.log(duplicates);
+        for (var i = 0; i < duplicates.length; i++){
 
-      for (var i = 0; i < duplicates.length; i++){
+          if( ID == duplicates[i]){
+            ID++;
+          }
+        }
 
-        if( ID == duplicates[i]){
-          ID++;
+      }
+      else if (cName.localeCompare("athlete") == 0){
+
+        ID = 20000000 +  await collection.countDocuments();
+
+        //gather list of IDs from collection objects
+        duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
+
+        for (var i = 0; i < duplicates.length; i++){
+
+          if( ID == duplicates[i]){
+            ID++;
+          }
         }
       }
+      else if (cName.localeCompare("players") == 0){
 
-    }
-    else if (cName.localeCompare("athlete") == 0){
+        ID = 10000000 + await collection.countDocuments();
 
-      ID = 20000000 + await collection.countDocuments();
+        //gather list of IDs from collection objects
+        duplicates = await collection.find().project({PID: 1} ).map(x => x.PID).toArray();
 
-      //gather list of IDs from collection objects
-      duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
+        for (var i = 0; i < duplicates.length; i++){
 
-      for (var i = 0; i < duplicates.length; i++){
-
-        if( ID == duplicates[i]){
-          ID++;
+          if( ID == duplicates[i]){
+            ID++;
+          }
         }
       }
-    }
-    else if (cName.localeCompare("players") == 0){
+      else if (cName.localeCompare("scenario") == 0){
 
-      ID = 10000000 + collection.countDocuments();
+        ID = 40000000 + await collection.countDocuments();
 
-      //gather list of IDs from collection objects
-      duplicates = await collection.find().project({PID: 1} ).map(x => x.PID).toArray();
+        //gather list of IDs from collection objects
+        duplicates = await collection.find().project({SID: 1} ).map(x => x.SID).toArray();
 
-      for (var i = 0; i < duplicates.length; i++){
+        for (var i = 0; i < duplicates.length; i++){
 
-        if( ID == duplicates[i]){
-          ID++;
+          if( ID == duplicates[i]){
+            ID++;
+          }
         }
       }
-    }
-    else if (cName.localeCompare("scenario") == 0){
-
-      ID = 40000000 + collection.countDocuments();
-
-      //gather list of IDs from collection objects
-      duplicates = await collection.find().project({SID: 1} ).map(x => x.SID).toArray();
-
-      for (var i = 0; i < duplicates.length; i++){
-
-        if( ID == duplicates[i]){
-          ID++;
-        }
+      else{
+        console.log("Invalid input: cName should be a collection name from the user_test database!");
       }
-    }
-    else{
-      console.log("Invalid input: cName should be a collection name from the user_test database!");
-    }
-
-    
-  } 
-  catch (err){
-    await client.close(); 
   }
-  finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+  catch{
+
+  }
+  finally{
     return ID;
   }
-
 }
 
-/**
- *  Functions for linking HTML side
- */
-
-/**
- * On click function for the submit button in the
- * Athlete creation menu. Function gathers all of the
- * user input options from the text/choice boxes and creates
- * a new athlete. 
- */
-athSubmitBtn.onclick = function(){
-
-  let inName = document.getElementById("name");
-  let inGender = document.getElementById("gender");
-  let inRace = document.getElementById("race");
-  let inSkColor = document.getElementById("skinColor");
-  let inShColor = document.getElementById("shirtColor");
-  let inPantColor = document.getElementById("pantColor");
-  let inPriorInj = document.getElementById("priorInjury");
-
-  athlete = createAthlete(inName,
-    inRace, inGender, inSkColor, inShColor, inPantColor,
-    inPriorInj);
-
-  console.log(athlete);
-}
-
-async function run(){
-
-  var ID = await setID("athlete");
-  console.log(ID);
-}
-
-run();
