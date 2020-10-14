@@ -7,9 +7,9 @@
 
 
 
-// Connection URI (Authenticate by connecting to user_test db)
+// Connection URI (Authenticate by connecting to admin db, then we can switch to whatever db we want)
 const uri =
-"mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/user_test?retryWrites=true&w=majority";
+"mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/admin?retryWrites=true&w=majority";
 
 
 /**
