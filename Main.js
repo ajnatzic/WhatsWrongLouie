@@ -9,7 +9,7 @@
 
 // Connection URI (Authenticate by connecting to admin db, then we can switch to whatever db we want)
 const uri =
-"mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/admin?retryWrites=true&w=majority";
+"mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/user_test?retryWrites=true&w=majority";
 
 
 /**
@@ -39,6 +39,7 @@ Main.use(express.static('public'));
 Main.use(bodyParser.urlencoded({
   extended: true
 }));
+
 
 
 /**
@@ -72,6 +73,9 @@ Main.post('/ath_create', async function(req, res){
       PInjury: inPriorInj
       }
 
+    // await dbDeleteByID("athlete", 20000002);
+    // await dbPull("athlete");
+
     //insert the athlete into the athlete collection.
     db.collection('athlete').insertOne(ath, function(err, collection){
       if(err) throw err;
@@ -94,51 +98,41 @@ console.log("Server listening at port 5500");
 
 
 //TODO: Restructure to work with mongoose
-function dbPull(cName){
+async function dbPull(cName){
   
+  try{
 
-
+    console.log("In dbPull");
     //list to collect contents
     var list = [];
 
 
-    const collection = db.collection(cName);
-
     // pulling information from collection
-    list = collection.find().toArray();
+    list = await db.collection(cName).find().toArray();
 
     console.log(list);
+  }
+  catch (err){
+    console.log("Error in dbPull");
+  }
 
 
 }
 
-// TODO: Restructure to work with Mongoose
+
 async function dbDeleteByID(cName, ID){
   try {
 
-    // Connect the client to the server
-    await client.connect();
-
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
-
-    //var to switch to user_test db.
-    const db = client.db(dbName);
-
-    const collection = db.collection(cName);
-
     // Finding item with matching ID and deleting
-    await collection.deleteOne(ID);
+    await db.collection(cName).deleteOne({"AID": ID});
 
     
   } 
   catch (err){
-    await client.close(); 
+    console.log("Error in dbDeleteByID");
   }
   finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    console.log("Delete complete");
   }
 
 }
