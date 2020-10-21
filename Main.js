@@ -98,7 +98,7 @@ console.log("Server listening at port 5500");
 
 
 //TODO: Restructure to work with mongoose
-async function dbPull(cName){
+async function dbPull(cName, ID){
   
   try{
 
