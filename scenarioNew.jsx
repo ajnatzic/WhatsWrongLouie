@@ -1,49 +1,50 @@
 import React, { Component } from 'react';
+import ScenarioNewForm from "./scenarioNewForm";
+import Hoprs from "./scenarioNewHoprs";
+import Error from "./errorPage"
+import Main from './main';
 
 class ScenarioNew extends Component {
-    
-    
-      render() {
-        return (
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">ID: </label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="10 00 00 00"></input>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Title: </label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Broken Arm  "></input>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Review</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Injury Type</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Sprain</option>
-                <option>Strain</option>
-                <option>Fracture</option>
-                <option>itis</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Injury Location</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Torso</option>
-                <option>Leg</option>
-                <option>Foot</option>
-                <option>Arm</option>
-                <option>Hand</option>
-                <option>Head</option>
-                <option>Other</option>  
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Next </button>
-          </form>
-        );
+  constructor(props){
+      super(props);
+      this.state = {mode: "new"};
+
+      this.handleNew = this.handleNew.bind(this);
+      this.handleMan = this.handleMan.bind(this);
+  }
+
+  handleNew(){this.setState({mode: 'new'});}
+  handleMan(){this.setState({mode: 'hoprs'});}
+
+
+  render() { 
+
+      const renderStatus = () => {
+          let com = '';
+          switch(this.state.mode){
+              case 'new':
+                  com = <ScenarioNewForm/>
+                  break;
+              case "hoprs":
+                  com = <Hoprs/>
+                  break;
+              default:
+                  com = <Error/>
+                  break;
+          }
+          return com;
       }
+
+      return ( 
+      <div className="main">
+          <div className="mainscreen">
+              {renderStatus()}
+          </div>
+          <div>
+            <button onClick={this.handleMan}>Next</button>
+          </div>
+      </div>    );
+  }
 }
- 
+
 export default ScenarioNew;

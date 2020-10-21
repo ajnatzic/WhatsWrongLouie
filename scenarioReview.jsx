@@ -25,7 +25,7 @@ class ScenarioReview extends Component {
             <p>There is one special test.</p>
             <li>Wrist Test</li>
             <h2>Treatment/Assessment</h2>
-            <p>TBroken Arm, refer to XRay.</p>
+            <p>Broken Arm, refer to XRay.</p>
         </div> );
     }
 }
