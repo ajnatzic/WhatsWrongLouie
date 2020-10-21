@@ -9,7 +9,7 @@ class ManageStudent extends Component {
           <tr>
             <th>ID</th>
             <th>First Name</th>
-            <th>Last Name</th>
+            <th>La  st Name</th>
             <th>Last Played</th>
           </tr>
         </thead>

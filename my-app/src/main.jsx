@@ -8,8 +8,11 @@ import ManStud from './studentManage';
 import SysNot from './systemNotifications';
 import SysSet from './systemSettings';
 
-
-
+import NewHistory from './scenarioHistory';
+import NewObservation from './scenarioObservation';
+import NewPalpation from './scenarioPalpation';
+import NewROM from './scenarioROM';
+import NewSpecial from './scenarioSpecial';
 
 class Main extends Component {
     constructor(props){
