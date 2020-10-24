@@ -4,31 +4,29 @@ class NavBar extends Component {
     render() { 
         return (  
             // Basic nav bar (Shows on every screen)
-                <div class="container">
-                <div style={{ width: 600 + 'px' }}>
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container">
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         {/* TODO: add hrefs to <a> tags */}
-                        <a href="/" class="navbar-brand">Whats wrong with the Lakers?</a>
+                        <a href="/" className="navbar-brand">Whats wrong with the Lakers?</a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                <li className="nav-item active">
+                                    <a href="/" className="nav-link">Home <span className="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/" class="nav-link">Account Settings</a>
+                                <li className="nav-item">
+                                    <a href="/" className="nav-link">Account Settings</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/" class="nav-link">Help</a>
+                                <li className="nav-item">
+                                    <a href="/" className="nav-link">Help</a>
                                 </li>
                             </ul>
                         </div>
                     </nav>
-                </div>
             </div>
                 );
     }

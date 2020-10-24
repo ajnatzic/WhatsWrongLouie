@@ -17,7 +17,10 @@ class AthleteScreen extends Component {
     }
 
     // Upon clicking "Create new Athlete" Button
-    handleNewAthlete() { this.setState({ mode: 'newAthlete' }); }
+    handleNewAthlete() { 
+        var createNewButton = document.getElementsByID
+        this.setState({ mode: 'newAthlete' 
+    }); }
 
 
     render() {
@@ -36,8 +39,8 @@ class AthleteScreen extends Component {
         }
         return (
             
-            <div class="container">
-                <button type="button" class="btn btn-primary btn-lg" onClick={this.handleNewAthlete}>Create New Athlete</button>
+            <div className="container">
+                <button id="createNewAthlete" type="button" className="btn btn-primary btn-lg" onClick={this.handleNewAthlete}>Create New Athlete</button>
                 <div className="mainscreen">
                     {renderStatus()}
                 </div>
