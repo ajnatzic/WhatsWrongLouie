@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
 
 // Athlete Creation Form
 import AthleteCreateForm from './athleteCreateForm';
 
-// Error Page from main app. TODO
-import Error from './errorPage';
 
 class AthleteScreen extends Component {
     constructor(props) {
@@ -17,14 +13,13 @@ class AthleteScreen extends Component {
     }
 
     // Upon clicking "Create new Athlete" Button
-    handleNewAthlete() { 
-        var createNewButton = document.getElementsByID
-        this.setState({ mode: 'newAthlete' 
-    }); }
+    handleNewAthlete() {
+        this.setState({ mode: 'newAthlete' });
+    }
 
 
     render() {
-        
+
         const renderStatus = () => {
             let com = '';
             switch (this.state.mode) {
@@ -38,7 +33,7 @@ class AthleteScreen extends Component {
             return com;
         }
         return (
-            
+
             <div className="container">
                 <button id="createNewAthlete" type="button" className="btn btn-primary btn-lg" onClick={this.handleNewAthlete}>Create New Athlete</button>
                 <div className="mainscreen">
