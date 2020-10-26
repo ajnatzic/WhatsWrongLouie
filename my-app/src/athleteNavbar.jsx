@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NavBar extends Component {
     render() { 
         return (  
-            // Basic nav bar (Shows on every screen)
+            // Basic nav bar (shows on every screen)
                 <div className="container">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         {/* TODO: add hrefs to <a> tags */}
