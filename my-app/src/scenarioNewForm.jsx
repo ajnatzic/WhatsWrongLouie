@@ -5,7 +5,7 @@ class ScenarioNewForm extends Component {
     
       render() {
         return (
-          <form>
+          <form action ="scen_create" method = "post">
             <div class="form-group">
               <label for="exampleFormControlInput1">ID: </label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="10 00 00 00"></input>
