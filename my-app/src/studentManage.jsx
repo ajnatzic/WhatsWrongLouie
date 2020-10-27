@@ -1,40 +1,64 @@
 import React, { Component } from 'react';
-import Table from 'react-bootstrap/Table';
+import { DataGrid } from '@material-ui/data-grid';
 
-class ManageStudent extends Component {
-    state = {  }
-    render() { 
-        return ( <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>La  st Name</th>
-            <th>Last Played</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10 00 00 00</td>
-            <td>James</td>
-            <td>Brown</td>
-            <td>10/14/2020</td>
-          </tr>
-          <tr>
-            <td>10 00 00 01</td>
-            <td>Alex</td>
-            <td>Trebeck</td>
-            <td>10/14/2020</td>
-          </tr>
-          <tr>
-            <td>10 00 00 02</td>
-            <td>Elijah </td>
-            <td>Wood</td>
-            <td>10/13/2020</td>
-          </tr>
-        </tbody>
-      </Table> );
-    }
+const columns = [
+  {field: 'id', headerName: "ID", width: 130},
+  {field: 'name', headerName: "Name", width: 130},
+  {field: 'lastPlayed', headerName: "Last Played", width: 130},
+  {field: 'athleteStatus', headerName: 'Athletes', width: 300}
+]
+
+class ManageScenario extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {searchID: null,
+                  searchTitle: '',
+                  obj: [
+                    {id: "10 00 00 00", name: "Simon Crump", lastPlayed: "02/02/2020", athleteStatus: "3/8 Injured"},
+                    {id: "10 00 00 01", name: "Dante Smith", lastPlayed: "02/17/2020", athleteStatus: "2/7 Injured"},
+                    {id: "10 00 00 02", name: "Jessica James", lastPlayed: "03/17/2020", athleteStatus: "6/7 Injured"},
+                    {id: "10 00 00 03", name: "Kamil Buson", lastPlayed: "04/02/2020", athleteStatus: "0/7 Injured"},
+                    {id: "10 00 00 04", name: "Yun Fang", lastPlayed: "04/22/2020", athleteStatus: "4/5 Injured"},
+                    {id: "10 00 00 05", name: "Desiree Sjoberg", lastPlayed: "05/02/2020",  athleteStatus: "4/4 Injured"},
+                  ]
+                };
+  }
+
+  handleChange = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]:val});
+  }
+
+  handleSubmit = (event) => {
+    alert('A name was submitted: ' + this.state.searchID);
+    event.preventDefault();
+  }
+
+  render() { 
+    return (  
+      <div>
+        <div className="scenarioManageSearch">
+          <form onSubmit={this.handleSubmit}>
+            <h1>Manage: {this.state.searchID}{this.state.searchTitle}</h1>
+            <label>
+              ID:
+              <input type="text" name='searchID' onChange={this.handleChange}/>
+            </label> 
+            <label>
+              Name:
+              <input type="text" name="searchTitle" onChange={this.handleChange}/>
+            </label>
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
+        <div style={{height: 500, width: '100%'}}>
+          <DataGrid rows={this.state.obj} columns={columns} pageSize={5} checkBoxSelection />
+        </div>
+      </div>
+
+     );
+  }
 }
  
-export default ManageStudent;
+export default ManageScenario;

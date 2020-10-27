@@ -1,9 +1,42 @@
 import React, { Component } from 'react';
 
 class ScenarioReview extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+        this.state = {searchID: null,
+                      searchTitle: ''
+                    };
+      }
+
+    handleChange = (event) => {
+        let nam = event.target.name;
+        let val = event.target.value;
+        this.setState({[nam]:val});
+    }
+    
+    handleSubmit = (event) => {
+        alert('A name was submitted: ' + this.state.searchID);
+        event.preventDefault();
+    }
+
     render() { 
-        return ( <div className="review">
+        return ( 
+        <div>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <h1>Manage: {this.state.searchID}{this.state.searchTitle}</h1>
+                    <label>
+                    ID:
+                    <input type="text" name='searchID' onChange={this.handleChange}/>
+                    </label> 
+                    <label>
+                    Title:
+                    <input type="text" name="searchTitle" onChange={this.handleChange}/>
+                    </label>
+                    <input type="submit" value="Submit"/>
+                </form>
+          </div>
+            <div className="review">
             <h2>Review</h2>
             <p>The athlete has a broken leg and needs a cast.</p>
             <h2>History</h2>
@@ -26,7 +59,9 @@ class ScenarioReview extends Component {
             <li>Wrist Test</li>
             <h2>Treatment/Assessment</h2>
             <p>Broken Arm, refer to XRay.</p>
-        </div> );
+            </div>
+        </div>
+         );
     }
 }
  
