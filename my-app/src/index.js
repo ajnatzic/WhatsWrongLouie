@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './style.css';
-import App from './App';
+//import App from './App';
 import Header from './header'
 import Main from './main'
 import * as serviceWorker from './serviceWorker';
@@ -11,7 +11,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Main />
-    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

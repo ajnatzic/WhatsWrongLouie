@@ -6,13 +6,7 @@ import TestScenario from './scenarioTest';
 import GradeStud from './studentGrade';
 import ManStud from './studentManage';
 import SysNot from './systemNotifications';
-import SysSet from './systemSettings';
-
-import NewHistory from './scenarioHistory';
-import NewObservation from './scenarioObservation';
-import NewPalpation from './scenarioPalpation';
-import NewROM from './scenarioROM';
-import NewSpecial from './scenarioSpecial';
+import SysSet from './systemSettings';  
 
 class Main extends Component {
     constructor(props){
@@ -88,7 +82,7 @@ class Main extends Component {
                 <button onClick={this.handleRev}>Review</button>
                 <button onClick={this.handleTest}>Test</button>
                 <h1 >Students</h1>
-                <button onClick={this.handleGrd}>Grade</button>
+                <button onClick={this.handleGrd}>Interact</button>
                 <button onClick={this.handleSman}>Manage</button>
                 <h1>System</h1>
                 <button onClick={this.handleSnot}>Notifications</button>
