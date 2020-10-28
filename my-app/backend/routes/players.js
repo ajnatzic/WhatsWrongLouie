@@ -31,6 +31,42 @@ router.route('/player_create').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// Get single player from DB
+router.route('/:id').get((req, res) => {
+
+  Players.findById(req.params.id)
+  .then(players => res.json(players))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// Get single player from DB and Delete
+router.route('/:id').delete((req, res) => {
+
+  Players.findByIdAndDelete(req.params.id)
+  .then(players => res.json('Player Deleted.'))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// Get single player from DB and update
+router.route('/update/:id').post((req, res) => {
+
+  Players.findById(req.params.id)
+  .then(players => {
+    // TODO
+    // players.PID = 
+    // players.PName = 
+    // players.Athlist = 
+    // players.LastPlay = 
+    // players.IiD = 
+
+    players.save()
+    .then(players => res.json('Player updated.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+  })
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 /**
  *  Function used to create an object ID that matches the database parameters.
  *  Based on the collection name being passed in, the function will search said
