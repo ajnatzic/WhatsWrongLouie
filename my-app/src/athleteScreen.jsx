@@ -23,15 +23,21 @@ import Error from './errorPage';
 class AthleteScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = { mode: "snot" };
+        this.state = {
+            /** Edit this to change screens */
+            mode: 'athHome'
+        }
 
         this.handleNewAthlete = this.handleNewAthlete.bind(this);
+        this.skipToHomeScreen = this.skipToHomeScreen.bind(this);
     }
 
-    // Upon clicking "Create new Athlete" Button
     handleNewAthlete() {
-        console.log('button clicked!!!!');
         this.setState({ mode: 'athNew' });
+    }
+
+    skipToHomeScreen() {
+        this.setState({ mode: 'athHome' });
     }
 
 
@@ -49,7 +55,7 @@ class AthleteScreen extends Component {
                     com = <AthleteCreateScreen />
                     break;
 
-                
+
                 /** Begin main game screens. Returning users start here */
                 // Athlete Home Screen
                 case 'athHome':
@@ -88,8 +94,8 @@ class AthleteScreen extends Component {
             return com;
         }
         return (
-            <div className="container">
-                <div className="mainscreen">
+            <div className="container text-center h-auto position-relative">
+                <div className="mainScreen vh-100 overflow-auto">
                     {renderStatus()}
                 </div>
             </div>);
