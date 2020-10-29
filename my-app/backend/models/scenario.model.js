@@ -21,6 +21,6 @@ const Schema = mongoose.Schema;
 
  });
 
- const Players = mongoose.model('players', superUserSchema);
+ const Scenario = mongoose.model('scenario', scenarioSchema);
 
- module.exports = Players;
+ module.exports = Scenario;

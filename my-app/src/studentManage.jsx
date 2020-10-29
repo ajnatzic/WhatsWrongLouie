@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
+import axios from 'axios';
 
 const columns = [
   {field: 'id', headerName: "ID", width: 130},
@@ -8,19 +9,27 @@ const columns = [
   {field: 'athleteStatus', headerName: 'Athletes', width: 300}
 ]
 
+  var studentList;
+  //Sends HTTP GET request to backend to get the list of players from the
+  // database. It then logs the list in the console. 
+  axios.get('http://localhost:5000/players/').then(res => studentList = res.data);
+
+
 class ManageScenario extends Component {
   constructor(props) {
     super(props);
+
+    var obj = [];
+
+    for(var i = 0; i < studentList.length; i++){
+
+      obj.push({
+        id: studentList[i].PID, name: studentList[i].PName, LastPlayed: studentList[i].LastPlay, athleteStatus: studentList[i].AthList.length
+      });
+    }
     this.state = {searchID: null,
                   searchTitle: '',
-                  obj: [
-                    {id: "10 00 00 00", name: "Simon Crump", lastPlayed: "02/02/2020", athleteStatus: "3/8 Injured"},
-                    {id: "10 00 00 01", name: "Dante Smith", lastPlayed: "02/17/2020", athleteStatus: "2/7 Injured"},
-                    {id: "10 00 00 02", name: "Jessica James", lastPlayed: "03/17/2020", athleteStatus: "6/7 Injured"},
-                    {id: "10 00 00 03", name: "Kamil Buson", lastPlayed: "04/02/2020", athleteStatus: "0/7 Injured"},
-                    {id: "10 00 00 04", name: "Yun Fang", lastPlayed: "04/22/2020", athleteStatus: "4/5 Injured"},
-                    {id: "10 00 00 05", name: "Desiree Sjoberg", lastPlayed: "05/02/2020",  athleteStatus: "4/4 Injured"},
-                  ]
+                  obj
                 };
   }
 

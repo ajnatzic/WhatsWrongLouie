@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-let Athlete = require('../models/athlete.model');
+let Athlete = require('../models/athlete.model.js');
 
 // handles incoming HTTP GET requests on the /athlete/ url path
 router.route('/').get((req, res) => {
@@ -14,7 +14,7 @@ router.route('/').get((req, res) => {
 router.route('/ath_create').post((req, res) => {
 
   //gathering user input from athlete creation screen
-    var inID = await setID();
+    var inID = setID();
     var inName = req.body.name;
     var inRace = req.body.race;
     var inGender = req.body.gender;
@@ -66,7 +66,7 @@ router.route('/ath_create').post((req, res) => {
  *  @return integer of the newly created ID.
  * 
  */
-async function setID(){
+function setID(){
 
     // Int var that will be populated with the specific ID number for an object.
     var ID = 0;
@@ -79,10 +79,10 @@ async function setID(){
 
     try{
 
-        ID = 20000000 +  await collection.countDocuments();
+        ID = 20000000 +  collection.countDocuments();
 
         //gather list of IDs from collection objects
-        duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
+        duplicates = collection.find().project({AID: 1} ).map(x => x.AID).toArray();
 
         for (var i = 0; i < duplicates.length; i++){
 

@@ -19,6 +19,6 @@ const Schema = mongoose.Schema;
 
  });
 
- const Players = mongoose.model('players', superUserSchema);
+ const Players = mongoose.model('players', playersSchema);
 
  module.exports = Players;

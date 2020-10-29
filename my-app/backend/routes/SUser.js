@@ -14,7 +14,7 @@ router.route('/').get((req, res) => {
 router.route('/SUser_create').post((req, res) => {
 
   //gathering user input from athlete creation screen
-  var SUID = await setID();
+  var SUID = setID();
   var SUName;
   var PlayerList = [];
   var LastPlay = new Date();
@@ -50,7 +50,7 @@ router.route('/SUser_create').post((req, res) => {
  *  @return integer of the newly created ID.
  * 
  */
-async function setID(){
+ function setID(){
 
     // Int var that will be populated with the specific ID number for an object.
     var ID = 0;
@@ -63,10 +63,10 @@ async function setID(){
 
     try{
 
-        ID = 30000000 +  await collection.countDocuments();
+        ID = 30000000 +  collection.countDocuments();
 
         //gather list of IDs from collection objects
-        duplicates = await collection.find().project({AID: 1} ).map(x => x.AID).toArray();
+        duplicates = collection.find().project({AID: 1} ).map(x => x.AID).toArray();
 
         for (var i = 0; i < duplicates.length; i++){
 
