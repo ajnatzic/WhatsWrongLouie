@@ -9,6 +9,9 @@ import AthleteHomeScreen from './athleteHomeScreen';
 /** Treat Screen */
 import AthleteTreatScreen from './athleteTreatScreen';
 
+/** Treatment Screen */
+import AthleteTreatmentScreen from './athleteTreatmentScreen';
+
 /** HOPRS screens */
 import AthleteHistory from './hoprs/athleteHistory';
 import AthleteObservation from './hoprs/athleteObservation';
@@ -25,7 +28,7 @@ class AthleteScreen extends Component {
         super(props);
         this.state = {
             /** Edit this to change screens */
-            mode: 'athHome'
+            mode: 'athTreatment'
         }
 
         this.handleNewAthlete = this.handleNewAthlete.bind(this);
@@ -61,9 +64,15 @@ class AthleteScreen extends Component {
                 case 'athHome':
                     com = <AthleteHomeScreen />
                     break;
+
+                
                 // Treat screen
                 case 'athTreat':
                     com = <AthleteTreatScreen />
+                    break;
+                // Treatment screen, located inside the treat screen
+                case 'athTreatment':
+                    com = <AthleteTreatmentScreen />
                     break;
 
                 /** Begin HOPRS screens */
@@ -95,9 +104,9 @@ class AthleteScreen extends Component {
         }
         return (
             <div className="container text-center h-auto position-relative">
-                <div className="mainScreen vh-100 overflow-auto">
+                {/* <div className="mainScreen vh-100 overflow-auto"> */}
                     {renderStatus()}
-                </div>
+                {/* </div> */}
             </div>);
     }
 }
