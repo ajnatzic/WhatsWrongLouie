@@ -19,6 +19,9 @@ import AthletePalpation from './hoprs/athletePalpation';
 import AthleteROM from './hoprs/athleteROM';
 import AthleteSpecialTests from './hoprs/athleteSpecialTest';
 
+/** HOPRS screens */
+import AthleteTeamScreen from './athleteTeamScreen';
+
 /** Error screen (if a screen cannot load for some reason) */
 import Error from './errorPage';
 
@@ -28,7 +31,7 @@ class AthleteScreen extends Component {
         super(props);
         this.state = {
             /** Edit this to change screens */
-            mode: 'athTreatment'
+            mode: 'athTeam'
         }
 
         this.handleNewAthlete = this.handleNewAthlete.bind(this);
@@ -63,6 +66,9 @@ class AthleteScreen extends Component {
                 // Athlete Home Screen
                 case 'athHome':
                     com = <AthleteHomeScreen />
+                    break;
+                case 'athTeam':
+                    com = <AthleteTeamScreen />
                     break;
 
                 
