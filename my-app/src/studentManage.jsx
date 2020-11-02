@@ -1,40 +1,73 @@
 import React, { Component } from 'react';
-import Table from 'react-bootstrap/Table';
+import { DataGrid } from '@material-ui/data-grid';
+import axios from 'axios';
 
-class ManageStudent extends Component {
-    state = {  }
-    render() { 
-        return ( <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>La  st Name</th>
-            <th>Last Played</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10 00 00 00</td>
-            <td>James</td>
-            <td>Brown</td>
-            <td>10/14/2020</td>
-          </tr>
-          <tr>
-            <td>10 00 00 01</td>
-            <td>Alex</td>
-            <td>Trebeck</td>
-            <td>10/14/2020</td>
-          </tr>
-          <tr>
-            <td>10 00 00 02</td>
-            <td>Elijah </td>
-            <td>Wood</td>
-            <td>10/13/2020</td>
-          </tr>
-        </tbody>
-      </Table> );
+const columns = [
+  {field: 'id', headerName: "ID", width: 130},
+  {field: 'name', headerName: "Name", width: 130},
+  {field: 'lastPlayed', headerName: "Last Played", width: 130},
+  {field: 'athleteStatus', headerName: 'Athletes', width: 300}
+]
+
+  var studentList;
+  //Sends HTTP GET request to backend to get the list of players from the
+  // database. It then logs the list in the console. 
+  axios.get('http://localhost:5000/players/').then(res => studentList = res.data);
+
+
+class ManageScenario extends Component {
+  constructor(props) {
+    super(props);
+
+    var obj = [];
+
+    for(var i = 0; i < studentList.length; i++){
+
+      obj.push({
+        id: studentList[i].PID, name: studentList[i].PName, LastPlayed: studentList[i].LastPlay, athleteStatus: studentList[i].AthList.length
+      });
     }
+    this.state = {searchID: null,
+                  searchTitle: '',
+                  obj
+                };
+  }
+
+  handleChange = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]:val});
+  }
+
+  handleSubmit = (event) => {
+    alert('A name was submitted: ' + this.state.searchID);
+    event.preventDefault();
+  }
+
+  render() { 
+    return (  
+      <div>
+        <div className="scenarioManageSearch">
+          <form onSubmit={this.handleSubmit}>
+            <h1>Manage: {this.state.searchID}{this.state.searchTitle}</h1>
+            <label>
+              ID:
+              <input type="text" name='searchID' onChange={this.handleChange}/>
+            </label> 
+            <label>
+              Name:
+              <input type="text" name="searchTitle" onChange={this.handleChange}/>
+            </label>
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
+        <div style={{height: 500, width: '100%'}}>
+          <DataGrid rows={this.state.obj} columns={columns} pageSize={5} checkBoxSelection />
+        </div>
+      </div>
+
+     );
+  }
 }
  
-export default ManageStudent;
+export default ManageScenario;

@@ -1,17 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
 import './style.css';
-import App from './App';
+//import App from './App';
 import Header from './header'
 import Main from './main'
 import * as serviceWorker from './serviceWorker';
+
+// NavBar (shows on every athlete screen)
+import NavBar from './athleteNavbar';
+
+// Athlete Screen
+import AthleteScreen from './athleteScreen';
+
+// Import Bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Main />
-    <App />
+
+    {/* <NavBar />
+    <AthleteScreen /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

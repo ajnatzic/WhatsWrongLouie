@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ScenarioNewForm from "./scenarioNewForm";
 import Hoprs from "./scenarioNewHoprs";
 import Error from "./errorPage"
-import Main from './main';
 
 class ScenarioNew extends Component {
   constructor(props){

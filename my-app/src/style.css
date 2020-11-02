@@ -93,6 +93,9 @@ table {
   flex-direction: column;
   margin: 0px;
   padding: 0px;
+  overflow: auto;
+  height: 550px;
+  border: 1px solid black;
 }
 
 .review h2 {
@@ -116,4 +119,13 @@ table {
 
 .test {
   width: 50%;
+}
+
+.scenarioManageSearch {
+  display: flex;
+  border: 1px solid black;
+}
+
+.inputManage {
+  margin: 10px;
 }
