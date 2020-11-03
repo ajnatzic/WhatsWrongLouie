@@ -11,69 +11,69 @@ class AthleteTeamScreen extends Component {
 
                 
                 <form>
-                    <div class="form-group">
+                    <div className="form-group">
                         
                         {/* Athlete example GREY: The athlete is inactive due to suspension.*/}
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary"></span>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text bg-secondary"></span>
                             </div>
-                            <input type="text" class="form-control bg-dark text-light" defaultValue="James (3 weeks)" disabled></input>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">X</button>
+                            <input type="text" className="form-control bg-dark text-light" defaultValue="James (3 weeks)" disabled></input>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-secondary" type="button">X</button>
                             </div>
 
 
                         </div>
 
                         {/* Athlete examples GREEN: The athlete is currently active */}
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-success"></span>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text bg-success"></span>
                             </div>
-                            <input type="text" class="form-control bg-dark text-light" defaultValue="Mary (Active)" disabled></input>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">X</button>
+                            <input type="text" className="form-control bg-dark text-light" defaultValue="Mary (Active)" disabled></input>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-secondary" type="button">X</button>
                             </div>
                         </div>
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-success"></span>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text bg-success"></span>
                             </div>
-                            <input type="text" class="form-control bg-dark text-light" defaultValue="Dante (Active)" disabled></input>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">X</button>
+                            <input type="text" className="form-control bg-dark text-light" defaultValue="Dante (Active)" disabled></input>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-secondary" type="button">X</button>
                             </div>
                         </div>
 
 
                         {/* Athlete examples RED: The athlete is injured and is waiting for aid. */}
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger"></span>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text bg-danger"></span>
                             </div>
-                            <input type="text" class="form-control bg-dark text-light" defaultValue="Jeremy (Injured)" disabled></input>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">X</button>
+                            <input type="text" className="form-control bg-dark text-light" defaultValue="Jeremy (Injured)" disabled></input>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-secondary" type="button">X</button>
                             </div>
                         </div>
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger"></span>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text bg-danger"></span>
                             </div>
-                            <input type="text" class="form-control bg-dark text-light" defaultValue="Hannah (Injured)" disabled></input>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">X</button>
+                            <input type="text" className="form-control bg-dark text-light" defaultValue="Hannah (Injured)" disabled></input>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-secondary" type="button">X</button>
                             </div>
                         </div>
 
                         
 
                         {/* Add athlete button */}
-                        <div class="input-group mb-3">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Add new athlete</button>
+                        <div className="input-group mb-3">
+                        <button type="button" className="btn btn-primary btn-lg btn-block">Add new athlete</button>
                         </div>
                     </div>
                 </form>
