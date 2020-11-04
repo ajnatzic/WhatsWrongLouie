@@ -7,7 +7,7 @@ class TestScenario extends Component {
             <div className="search">
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">ID: </label>
+                        <label htmlFor="exampleFormControlInput1">ID: </label>
                         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="10 00 00 00"></input>
                     </div>
                     <div class="form-group">

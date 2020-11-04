@@ -28,10 +28,11 @@ class ManageStudent extends Component {
       obj.push({
         id: studentList[i].PID,
         name: studentList[i].PName,
-        LastPlayed: studentList[i].LastPlay,
+        lastPlayed: studentList[i].LastPlay.substring(0, 10),
         athleteStatus: studentList[i].AthList.length
       });
     }
+    
     this.state = {searchID: null,
                   searchTitle: '',
                   obj

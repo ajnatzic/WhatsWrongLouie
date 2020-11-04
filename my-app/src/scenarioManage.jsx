@@ -8,7 +8,7 @@ const columns = [
   {field: 'injuryType', headerName: "Injury Type", width: 130},
   {field: 'injuryLoc', headerName: 'Injury Location', width: 130},
   {field: "dateCreated", headerName: "Date Created", width: 130},
-  {field: "dateEditted", headerName: "Last Edited", width: 130 }
+  {field: "dateEdited", headerName: "Last Edited", width: 130 }
 ]
 
 var scenarioList;
@@ -29,10 +29,10 @@ class ManageScenario extends Component {
       obj.push({
         id: scenarioList[i].SID,
         title: scenarioList[i].SName,
-        dateCreated: scenarioList[i].SCreated,
-        LastEdited: scenarioList[i].LastEdited,
         injuryType: scenarioList[i].SCat[0],
-        injuryLoc: scenarioList[i].SCat[1]
+        injuryLoc: scenarioList[i].SCat[1],
+        dateCreated: scenarioList[i].SCreated.substring(0,10),
+        dateEdited: scenarioList[i].LastEdited.substring(0,10)  
       });
     }
 

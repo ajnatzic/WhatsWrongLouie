@@ -14,26 +14,31 @@ var studentList;
 axios.get('http://localhost:5000/players/').then(res => studentList = res.data);
 
 
-class ManageScenario extends Component {
-constructor(props) {
-  super(props);
+class ManageStudent extends Component {
 
-  var obj = [];
+  //list to hold collection documents
+  constructor(props) {
+    super(props);
 
-  for(var i = 0; i < studentList.length; i++){
+    var obj = [];
 
-    obj.push({
-      id: studentList[i].PID,
-      name: studentList[i].PName,
-      LastPlayed: studentList[i].LastPlay,
-      athleteStatus: studentList[i].AthList.length
-    });
+    for(var i = 0; i < studentList.length; i++){
+
+      obj.push({
+        id: studentList[i].PID,
+        name: studentList[i].PName,
+        lastPlayed: studentList[i].LastPlay.substring(0, 10),
+        athleteStatus: studentList[i].AthList.length
+      });
+    }
+
+    console.log(obj);
+
+    this.state = {searchID: null,
+                  searchTitle: '',
+                  obj
+                };
   }
-  this.state = {searchID: null,
-                searchTitle: '',
-                obj
-              };
-}
 
   handleChange = (event) => {
     let nam = event.target.name;
@@ -72,4 +77,4 @@ constructor(props) {
   }
 }
  
-export default ManageScenario;
+export default ManageStudent;
