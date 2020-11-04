@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
+import axios from 'axios';
 
 const columns = [
   {field: 'id', headerName: "ID", width: 130},
@@ -10,19 +11,34 @@ const columns = [
   {field: "dateEditted", headerName: "Last Edited", width: 130 }
 ]
 
+var scenarioList;
+//Sends HTTP GET request to backend to get the list of players from the
+// database. It then logs the list in the console. 
+axios.get('http://localhost:5000/scenario/').then(res => scenarioList = res.data);
+
+console.log(scenarioList);
+
 class ManageScenario extends Component {
   constructor(props) {
     super(props);
+
+    var obj = [];
+    
+    for(var i = 0; i < scenarioList.length; i++){
+
+      obj.push({
+        id: scenarioList[i].SID,
+        title: scenarioList[i].SName,
+        dateCreated: scenarioList[i].SCreated,
+        LastEdited: scenarioList[i].LastEdited,
+        injuryType: scenarioList[i].SCat[0],
+        injuryLoc: scenarioList[i].SCat[1]
+      });
+    }
+
     this.state = {searchID: null,
                   searchTitle: '',
-                  obj: [
-                    {id: "40 00 00 00", title: "Broken Arm", dateCreated: "02/02/2020", dateEditted: "02/03/2020", injuryType: "Fracture", injuryLoc: "Arm"},
-                    {id: "40 00 00 01", title: "Broken Leg", dateCreated: "02/17/2020", dateEditted: "02/18/2020", injuryType: "Fracture", injuryLoc: "Leg"},
-                    {id: "40 00 00 02", title: "Sprain Leg", dateCreated: "03/17/2020", dateEditted: "03/20/2020", injuryType: "Sprain", injuryLoc: "Leg"},
-                    {id: "40 00 00 03", title: "Thigh Bruise", dateCreated: "04/02/2020", dateEditted: "04/03/2020", injuryType: "Other", injuryLoc: "Leg"},
-                    {id: "40 00 00 04", title: "Concussion", dateCreated: "04/22/2020", dateEditted: "04/23/2020", injuryType: "Other", injuryLoc: "Head"},
-                    {id: "40 00 00 05", title: "Sprain Wrist", dateCreated: "05/02/2020", dateEditted: "05/03/2020", injuryType: "Sprain", injuryLoc: "Hand"},
-                  ]
+                  obj
                 };
   }
 
