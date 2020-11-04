@@ -4,15 +4,8 @@ import React, { Component } from 'react';
 class AthleteTeamScreen extends Component {
     render() {
         return (
-            <div className="container">
-                <button id="treatButton" type="button" className="btn btn-danger btn-lg float-left">Back</button>
-                {/* TODO: add "teams label" between these two buttons */}
-                <button id="teamButton" type="button" className="btn btn-success btn-lg float-right">Team</button>
-
-                
                 <form>
                     <div className="form-group">
-                        
                         {/* Athlete example GREY: The athlete is inactive due to suspension.*/}
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
@@ -77,11 +70,7 @@ class AthleteTeamScreen extends Component {
                         </div>
                     </div>
                 </form>
-
-
-                <button id="referenceButton" type="button" className="btn btn-dark btn-lg float-left">References</button>
-                <button id="settingsButton" type="button" className="btn btn-secondary btn-lg float-right">Settings</button>
-            </div>);
+            );
     }
 }
 
