@@ -3,12 +3,6 @@ import React, { Component } from 'react';
 // Import Athlete Creation Screen (includes form and model of "athlete")
 import AthleteCreateScreen from './athleteCreateForm';
 
-/** Home Screen */
-import AthleteHomeScreen from './athleteHomeScreen';
-
-/** Treat Screen */
-import AthleteTreatScreen from './athleteTreatScreen';
-
 /** Treatment Screen */
 import AthleteTreatmentScreen from './athleteTreatmentScreen';
 
