@@ -9,7 +9,6 @@ router.route('/').get((req, res) => {
     .then(scenario => res.json(scenario))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-
 // handles incoming HTTP POST requests on the /athlete/ath_create/
 router.route('/scen_create').post((req, res) => {
 
