@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const columns = [
   {field: 'id', headerName: "ID", width: 130},
-  {field: 'name', headerName: "Name", width: 130},
+  {field: 'name', headerName: "Name", width: 200},
   {field: 'lastPlayed', headerName: "Last Played", width: 130},
   {field: 'athleteStatus', headerName: 'Athletes', width: 300}
 ]
@@ -32,7 +32,7 @@ class ManageStudent extends Component {
         athleteStatus: studentList[i].AthList.length
       });
     }
-    
+
     this.state = {searchID: null,
                   searchTitle: '',
                   obj

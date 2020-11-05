@@ -31,12 +31,14 @@ const athleteRouter = require('./routes/athlete');
 const playersRouter = require('./routes/players');
 const scenarioRouter = require('./routes/scenario');
 const SUserRouter = require('./routes/SUser');
+const GameDataRouter = require('./routes/GameData');
 
 // adding routers as middleware
 app.use('/athlete', athleteRouter);
 app.use('/players', playersRouter);
 app.use('/scenario', scenarioRouter);
 app.use('/SUser', SUserRouter);
+app.use('/GameData', GameDataRouter);
 
 // Server connecting
 app.listen(port, () => {

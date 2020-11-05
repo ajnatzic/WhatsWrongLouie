@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const columns = [
   {field: 'id', headerName: "ID", width: 130},
-  {field: 'name', headerName: "Name", width: 130},
+  {field: 'name', headerName: "Name", width: 200},
   {field: 'lastPlayed', headerName: "Last Played", width: 130},
   {field: 'athleteStatus', headerName: 'Athletes', width: 300}
 ]
@@ -71,6 +71,43 @@ class ManageStudent extends Component {
         <div style={{height: 500, width: '100%'}}>
           <DataGrid rows={this.state.obj} columns={columns} pageSize={5} checkBoxSelection />
         </div>
+
+        <form>
+          <h1 class="display-8">Force Injury</h1>
+          <div class="jumbotron jumbotron-fluid">
+            
+            <div class="form-group col-md-6">
+              <label for="injuryInput">Injury Type</label>
+              <select class="form-control">
+                <option>Select A Injury Type..</option>
+                <option>Dislocation</option>
+                <option>Sprain</option>
+                <option>Strain</option>
+                <option>Fracture</option>
+                <option>Itis</option>
+              </select>
+
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="locationType">Injury Location</label>
+              <select class="form-control">
+                <option>Select A Injury Location..</option>
+                <option>Leg</option>
+                <option>Arm</option>
+                <option>Torso</option>
+                <option>Head</option>
+                <option>Hand</option>
+                <option>Foot</option>
+              </select>
+
+            </div>
+            
+            <div class="form-group col-md-6">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
 
      );
