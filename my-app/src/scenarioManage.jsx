@@ -16,8 +16,6 @@ var scenarioList;
 // database. It then logs the list in the console. 
 axios.get('http://localhost:5000/scenario/').then(res => scenarioList = res.data);
 
-console.log(scenarioList);
-
 class ManageScenario extends Component {
   constructor(props) {
     super(props);

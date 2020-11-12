@@ -22,6 +22,7 @@ const Schema = mongoose.Schema;
  }, {
    
    timestamps: false,
+   collection: 'athlete'
  
 
  });

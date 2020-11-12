@@ -9,10 +9,12 @@ const columns = [
   {field: 'athleteStatus', headerName: 'Athletes', width: 300}
 ]
 var studentList;
+var athleteList;
+var gameData;
 //Sends HTTP GET request to backend to get the list of players from the
 // database. It then logs the list in the console. 
 axios.get('http://localhost:5000/players/').then(res => studentList = res.data);
-
+axios.get('http://localhost:5000/GameData/').then(res => gameData = res.data);
 
 class ManageStudent extends Component {
 
@@ -32,13 +34,13 @@ class ManageStudent extends Component {
       });
     }
 
-    console.log(obj);
-
     this.state = {searchID: null,
                   searchTitle: '',
                   obj
                 };
   }
+
+  
 
   handleChange = (event) => {
     let nam = event.target.name;
@@ -49,6 +51,117 @@ class ManageStudent extends Component {
   handleSubmit = (event) => {
     alert('A name was submitted: ' + this.state.searchID);
     event.preventDefault();
+  }
+
+  // Force Injury event.
+  // Pressing the submit button in the form
+  // will retrieve the GameData list for the
+  // chosen injury and body location, then
+  // pick a random injury and apply it to every
+  // student in the players list. 
+  handleSubmitFI = (event) => {
+
+    var  injuryList;
+    var currAthlete;
+    
+    if(this.state.injurytype === "Dislocation"){
+
+      injuryList = gameData[1].DislocationList;
+
+    }
+    else if(this.state.injurytype === "Sprain"){
+      injuryList = gameData[2].SpainList;
+
+    }
+    else if(this.state.injurytype === "Strain"){
+      injuryList = gameData[3].StrainList;
+
+    }
+    else if(this.state.injurytype === "Fracture"){
+      injuryList = gameData[4].FractureList;
+
+    }
+    else if(this.state.injurytype === "Itis"){
+      injuryList = gameData[5].ItisList;
+
+    }
+    else{
+      alert("Please select an injury type and body location");
+    }
+
+    if(this.state.locationtype === "Leg"){
+      injuryList = injuryList.Leg;
+    }
+    else if(this.state.locationtype === "Arm"){
+        injuryList = injuryList.Arm;
+    }
+    else if(this.state.locationtype === "Torso"){
+        injuryList = injuryList.Torso;
+    }
+    else if(this.state.locationtype === "Head"){
+        injuryList = injuryList.Head;
+    }
+    else if(this.state.locationtype === "Hand"){
+        injuryList = injuryList.Hand;
+    }
+    else if(this.state.locationtype === "foot"){
+        injuryList = injuryList.Foot;
+    }
+    else{
+      alert("Please select an injury type and body location");
+    }
+
+    //loop through each student
+    for(var i = 0; i < studentList.length; i++){
+
+      var athList = studentList[i].AthList;
+        //loop through each athlete in the student document
+        for(var j = 0; j < athList.length; j++){
+
+
+          /**
+           * NOTE: get request shows athlete data in the back end,
+           * but when passed back to the front via res.data
+           * it is undefined. Need to fix this issue to finish
+           * the force injury feature. - Tyler.
+           */
+          axios.get('http://localhost:5000/athlete/get-athlete/', {
+            params: {
+              AID: athList[j]
+            }
+          }).then((res) => {
+            currAthlete = res.data; //undefined
+            });
+
+          console.log(currAthlete);
+
+          //check if the current athlete has no scenario set
+          if(currAthlete.CurrScen === 0){
+
+            //select random scenario from injury list
+            currAthlete.CurrScen = injuryList[Math.floor(Math.random() * injuryList.length)];
+
+            axios.put('http://localhost:5000/athlete/update-athlete/', {
+              params: {
+                AID: currAthlete.AID,
+                CurrScen: currAthlete.CurrScen
+              }
+            });
+
+          }
+
+        }
+    }
+
+
+
+    event.preventDefault();
+  }
+
+  handleChangeFI = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]:val});
   }
 
   render() { 
@@ -72,13 +185,13 @@ class ManageStudent extends Component {
           <DataGrid rows={this.state.obj} columns={columns} pageSize={5} checkBoxSelection />
         </div>
 
-        <form>
-          <h1 class="display-8">Force Injury</h1>
-          <div class="jumbotron jumbotron-fluid">
+        <form onSubmit={this.handleSubmitFI}>
+          <h1 className="display-8">Force Injury</h1>
+          <div className="jumbotron jumbotron-fluid">
             
-            <div class="form-group col-md-6">
-              <label for="injuryInput">Injury Type</label>
-              <select class="form-control">
+            <div className="form-group col-md-6">
+              <label htmlFor="injuryInput">Injury Type</label>
+              <select className="form-control" name='injurytype' onChange={this.handleChangeFI}>
                 <option>Select A Injury Type..</option>
                 <option>Dislocation</option>
                 <option>Sprain</option>
@@ -89,9 +202,9 @@ class ManageStudent extends Component {
 
             </div>
 
-            <div class="form-group col-md-6">
-              <label for="locationType">Injury Location</label>
-              <select class="form-control">
+            <div className="form-group col-md-6">
+              <label htmlFor="locationType">Injury Location</label>
+              <select className="form-control" name='locationtype' onChange={this.handleChangeFI}>
                 <option>Select A Injury Location..</option>
                 <option>Leg</option>
                 <option>Arm</option>
@@ -103,8 +216,8 @@ class ManageStudent extends Component {
 
             </div>
             
-            <div class="form-group col-md-6">
-              <button type="submit" class="btn btn-primary">Submit</button>
+            <div className="form-group col-md-6">
+              <button type="submit" className="btn btn-primary">Submit</button>
             </div>
           </div>
         </form>

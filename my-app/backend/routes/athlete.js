@@ -10,6 +10,27 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// handles incoming HTTP GET requests on the /edit-athlete/ url path
+router.route('/get-athlete/').get((req, res) => {
+  Athlete.findOne({"AID": parseInt(req.query.AID)})
+    .then(athlete => res.json(athlete))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// handles incoming HTTP GET requests on the /edit-athlete/ url path
+router.route('/update-athlete/').put((req, res, next) => {
+  Athlete.findOneAndUpdate({AID: req.params.AID}, {
+    $set: req.body
+  }, (error, data) => {
+    if(error){
+      return next(error);
+    }
+    else{
+      res.json(data)
+    }
+  })
+});
+
 // handles incoming HTTP POST requests on the /athlete/ath_create/
 router.route('/ath_create').post((req, res) => {
 
