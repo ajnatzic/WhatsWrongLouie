@@ -118,44 +118,17 @@ class ManageStudent extends Component {
         //loop through each athlete in the student document
         for(var j = 0; j < athList.length; j++){
 
-
-          /**
-           * NOTE: get request shows athlete data in the back end,
-           * but when passed back to the front via res.data
-           * it is undefined. Need to fix this issue to finish
-           * the force injury feature. - Tyler.
-           */
-          axios.get('http://localhost:5000/athlete/get-athlete/', {
+          axios.get('http://localhost:5000/athlete/force-injury/', {
             params: {
-              AID: athList[j]
+              AID: athList[j],
+              Scen: injuryList[Math.floor(Math.random() * injuryList.length)]
             }
-          }).then((res) => {
-            currAthlete = res.data; //undefined
-            });
-
-          console.log(currAthlete);
-
-          //check if the current athlete has no scenario set
-          if(currAthlete.CurrScen === 0){
-
-            //select random scenario from injury list
-            currAthlete.CurrScen = injuryList[Math.floor(Math.random() * injuryList.length)];
-
-            axios.put('http://localhost:5000/athlete/update-athlete/', {
-              params: {
-                AID: currAthlete.AID,
-                CurrScen: currAthlete.CurrScen
-              }
-            });
-
-          }
-
+          });
         }
-    }
 
+      }
 
-
-    event.preventDefault();
+      event.preventDefault();
   }
 
   handleChangeFI = (event) => {

@@ -10,10 +10,27 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// handles incoming HTTP GET requests on the /edit-athlete/ url path
-router.route('/get-athlete/').get((req, res) => {
+// Get request to force injury on uninjured athletes
+router.route('/force-injury/').get((req, res) => {
   Athlete.findOne({"AID": parseInt(req.query.AID)})
-    .then(athlete => res.json(athlete))
+    .then(athlete => {
+      
+      if(athlete.CurrScen === 0){
+
+        athlete.CurrScen = req.query.Scen;
+        Athlete.findOneAndUpdate({"AID": parseInt(req.query.AID)}, {
+          $set: athlete
+        }, (error,data) => {
+          if(error){
+            return next(error);
+          }
+          else{
+            res.json(data)
+          }
+        }).then(res => res.json("athlete updated"));
+
+      }
+    })
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
