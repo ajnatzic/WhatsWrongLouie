@@ -7,6 +7,7 @@ import GradeStud from './studentGrade';
 import ManStud from './studentManage';
 import SysNot from './systemNotifications';
 import SysSet from './systemSettings';  
+import Header from './header';
 
 class Main extends Component {
     constructor(props){
@@ -37,7 +38,7 @@ class Main extends Component {
     handleSet(){this.setState({mode: 'set'});}
 
 
-    render() { 
+    render() {
 
         const renderStatus = () => {
             let com = '';
@@ -73,25 +74,28 @@ class Main extends Component {
             return com;
         }
 
-        return ( 
-        <div className="main">
-            <div className="mainmenu">
-                <h1 >Scenario</h1>
-                <button onClick={this.handleNew}>New</button>
-                <button onClick={this.handleMan}>Manage</button>
-                <button onClick={this.handleRev}>Review</button>
-                <button onClick={this.handleTest}>Test</button>
-                <h1 >Students</h1>
-                <button onClick={this.handleGrd}>Interact</button>
-                <button onClick={this.handleSman}>Manage</button>
-                <h1>System</h1>
-                <button onClick={this.handleSnot}>Notifications</button>
-                <button onClick={this.handleSet}>Settings</button>
-            </div>
-            <div className="mainscreen">
-                {renderStatus()}
-            </div>
-        </div>    );
+        return (
+            <div>
+                <Header />
+                <div className="main">
+                    <div className="mainmenu">
+                        <h1 >Scenario</h1>
+                        <button onClick={this.handleNew}>New</button>
+                        <button onClick={this.handleMan}>Manage</button>
+                        <button onClick={this.handleRev}>Review</button>
+                        <button onClick={this.handleTest}>Test</button>
+                        <h1 >Students</h1>
+                        <button onClick={this.handleGrd}>Interact</button>
+                        <button onClick={this.handleSman}>Manage</button>
+                        <h1>System</h1>
+                        <button onClick={this.handleSnot}>Notifications</button>
+                        <button onClick={this.handleSet}>Settings</button>
+                    </div>
+                    <div className="mainscreen">
+                        {renderStatus()}
+                    </div>
+                </div>
+            </div>);
     }
 }
  

@@ -19,6 +19,26 @@ import AthleteTeamScreen from './athleteTeamScreen';
 /** Error screen (if a screen cannot load for some reason) */
 import Error from './errorPage';
 
+import AthleteReferencesScreen from './athleteReferencesScreen';
+import AthleteSettingsScreen from './athleteSettingsScreen';
+
+import NavBar from './athleteNavbar';
+
+
+
+
+// import { library } from '../node_modules/@fortawesome/fontawesome-svg-core'
+// import { fab } from '../node_modules/@fortawesome/free-brands-svg-icons'
+// import { faCheckSquare, faCoffee } from '../node_modules/@fortawesome/free-solid-svg-icons'
+
+// import Map from './Map';
+
+
+// import ReactDOM from 'react-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+// const element = <FontAwesomeIcon icon={faCoffee} />
 
 class AthleteScreen extends Component {
     constructor(props) {
@@ -107,18 +127,25 @@ class AthleteScreen extends Component {
                         </div>
                     break;
 
-                case 'athRef': // TODO: put in external file later
+                case 'athRef':
                     com = 
                     <div className="container">
-                        <button onClick={this.skipToHomeScreen} type="button" className="btn btn-danger btn-lg float-left">Back</button>
-                        <h1>This is the references screen</h1>  
+                        <div className="row">
+                            <button onClick={this.skipToHomeScreen} type="button" className="btn btn-danger btn-lg float-left my-2">Back</button>
+                            <div className="p-3 w-auto my-2 bg-secondary text-white">References</div>
+                            <button type="button" className="btn btn-success btn-lg btn-block my-2">Add Reference</button>
+                        </div>
+                        <AthleteReferencesScreen />
                     </div>
                     break;
-                case 'athSetting': // TODO: put in external file later
+                case 'athSetting':
                     com = 
-                        <div className="container">
+                    <div className="container">
+                        <div className="row">
                             <button onClick={this.skipToHomeScreen} type="button" className="btn btn-danger btn-lg float-left">Back</button>
-                            <h1>This is the settings screen</h1>
+                            <div className="p-3 w-auto my-2 bg-secondary text-white">Settings</div>
+                        </div>
+                        <AthleteSettingsScreen />
                         </div>
                     break;
                 // Treat screen
@@ -268,6 +295,7 @@ class AthleteScreen extends Component {
         }
         return (
             <div className="container text-center h-auto position-relative">
+                <NavBar />
                 {renderStatus()}
             </div>);
     }
