@@ -142,7 +142,7 @@ class AthleteScreen extends Component {
                     com = 
                     <div className="container">
                         <div className="row">
-                            <button onClick={this.skipToHomeScreen} type="button" className="btn btn-danger btn-lg float-left">Back</button>
+                            <button onClick={this.skipToHomeScreen} type="button" className="btn btn-danger btn-lg float-left my-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">Settings</div>
                         </div>
                         <AthleteSettingsScreen />
@@ -161,40 +161,40 @@ class AthleteScreen extends Component {
                                             {/* History */}
                                             <div className="input-group mb-3">
                                                 <input type="text" className="form-control" placeholder="History" aria-label="History" aria-describedby="basic-addon2"></input>
-                                                <div class="input-group-append">
-                                                    <button onClick={this.handleHistory} class="btn btn-outline-secondary" type="button" id="button-addon2">-</button>
+                                                <div className="input-group-append">
+                                                    <button onClick={this.handleHistory} className="btn btn-outline-secondary" type="button" id="button-addon2">-</button>
                                                 </div>
                                             </div>
 
                                             {/* Observation */}
                                             <div className="input-group mb-3">
                                                 <input type="text" className="form-control" placeholder="Observation" aria-label="Observation" aria-describedby="basic-addon2"></input>
-                                                <div class="input-group-append">
-                                                    <button onClick={this.handleObservation} class="btn btn-outline-danger" type="button" id="button-addon2">+</button>
+                                                <div className="input-group-append">
+                                                    <button onClick={this.handleObservation} className="btn btn-outline-danger" type="button" id="button-addon2">+</button>
                                                 </div>
                                             </div>
 
                                             {/* Palpations */}
                                             <div className="input-group mb-3">
                                                 <input type="text" className="form-control" placeholder="Palpations" aria-label="Palpations" aria-describedby="basic-addon2"></input>
-                                                <div class="input-group-append">
-                                                    <button onClick={this.handlePalpation} class="btn btn-outline-success" type="button" id="button-addon2">O</button>
+                                                <div className="input-group-append">
+                                                    <button onClick={this.handlePalpation} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
                                             </div>
 
                                             {/* Range of Motion (ROM)*/}
                                             <div className="input-group mb-3">
                                                 <input type="text" className="form-control" placeholder="Range of Motion" aria-label="Range of Motion" aria-describedby="basic-addon2"></input>
-                                                <div class="input-group-append">
-                                                    <button onClick={this.handleROM} class="btn btn-outline-success" type="button" id="button-addon2">O</button>
+                                                <div className="input-group-append">
+                                                    <button onClick={this.handleROM} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
                                             </div>
 
                                             {/* Special Tests */}
                                             <div className="input-group mb-3">
                                                 <input type="text" className="form-control" placeholder="Special Tests" aria-label="Special Tests" aria-describedby="basic-addon2"></input>
-                                                <div class="input-group-append">
-                                                    <button onClick={this.handleST} class="btn btn-outline-success" type="button" id="button-addon2">O</button>
+                                                <div className="input-group-append">
+                                                    <button onClick={this.handleST} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
                                             </div>
 
@@ -230,7 +230,7 @@ class AthleteScreen extends Component {
                 // History screen
                 case 'athHistory':
                     com = 
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <button onClick={this.handleTreatButton} type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">History</div>
@@ -242,7 +242,7 @@ class AthleteScreen extends Component {
                 // Observation screen
                 case 'athObservation':
                     com = 
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <button onClick={this.handleTreatButton} type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">Observation</div>
@@ -254,7 +254,7 @@ class AthleteScreen extends Component {
                 // Palpation screen
                 case 'athPalpation':
                     com = 
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <button onClick={this.handleTreatButton} type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">Palpation</div>
@@ -266,7 +266,7 @@ class AthleteScreen extends Component {
                 // Range of Motion screen
                 case 'athROM':
                     com = 
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <button onClick={this.handleTreatButton} type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">Range of Motion</div>
@@ -278,7 +278,7 @@ class AthleteScreen extends Component {
                 // Special Tests screen
                 case 'athST':
                     com = 
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <button onClick={this.handleTreatButton} type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
                             <div className="p-3 w-auto my-2 bg-secondary text-white">Special Tests</div>
