@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import GoogleSignInBtn from './googleSignInBtn'
 
 class AthleteSettingsScreen extends Component {
     render() {
         return (
-            <div className='container'>
-                <h1>Settings Screen</h1>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            </div>
+            <>
+                <GoogleSignInBtn />
+            </>
         );
     }
 }
