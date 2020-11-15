@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AthleteSettingsScreen extends Component {
+class AthleteReferencesScreen extends Component {
     render() {
         return (
             <div className='container'>
@@ -31,4 +31,4 @@ class AthleteSettingsScreen extends Component {
     }
 }
 
-export default AthleteSettingsScreen;
+export default AthleteReferencesScreen;
