@@ -160,7 +160,7 @@ class AthleteScreen extends Component {
                                         <div className="form-group">
                                             {/* History */}
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="History" aria-label="History" aria-describedby="basic-addon2"></input>
+                                                <input type="text" className="form-control" placeholder="History" aria-label="History" aria-describedby="basic-addon2" readOnly></input>
                                                 <div className="input-group-append">
                                                     <button onClick={this.handleHistory} className="btn btn-outline-secondary" type="button" id="button-addon2">-</button>
                                                 </div>
@@ -168,7 +168,7 @@ class AthleteScreen extends Component {
 
                                             {/* Observation */}
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Observation" aria-label="Observation" aria-describedby="basic-addon2"></input>
+                                                <input type="text" className="form-control" placeholder="Observation" aria-label="Observation" aria-describedby="basic-addon2" readOnly></input>
                                                 <div className="input-group-append">
                                                     <button onClick={this.handleObservation} className="btn btn-outline-danger" type="button" id="button-addon2">+</button>
                                                 </div>
@@ -176,7 +176,7 @@ class AthleteScreen extends Component {
 
                                             {/* Palpations */}
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Palpations" aria-label="Palpations" aria-describedby="basic-addon2"></input>
+                                                <input type="text" className="form-control" placeholder="Palpations" aria-label="Palpations" aria-describedby="basic-addon2" readOnly></input>
                                                 <div className="input-group-append">
                                                     <button onClick={this.handlePalpation} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
@@ -184,7 +184,7 @@ class AthleteScreen extends Component {
 
                                             {/* Range of Motion (ROM)*/}
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Range of Motion" aria-label="Range of Motion" aria-describedby="basic-addon2"></input>
+                                                <input type="text" className="form-control" placeholder="Range of Motion" aria-label="Range of Motion" aria-describedby="basic-addon2" readOnly></input>
                                                 <div className="input-group-append">
                                                     <button onClick={this.handleROM} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
@@ -192,7 +192,7 @@ class AthleteScreen extends Component {
 
                                             {/* Special Tests */}
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Special Tests" aria-label="Special Tests" aria-describedby="basic-addon2"></input>
+                                                <input type="text" className="form-control" placeholder="Special Tests" aria-label="Special Tests" aria-describedby="basic-addon2" readOnly></input>
                                                 <div className="input-group-append">
                                                     <button onClick={this.handleST} className="btn btn-outline-success" type="button" id="button-addon2">O</button>
                                                 </div>
