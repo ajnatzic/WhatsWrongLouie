@@ -3,14 +3,6 @@ import React, { Component } from 'react';
 class AthletePalpation extends Component {
     render() {
         return (
-            <div className="container">
-                
-            {/* Back Button */}
-            <div class="row">
-                    <button type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
-                    <div className="p-3 w-auto my-2 bg-secondary text-white">Palpation</div>
-            </div>
-
             <div className="row">
                 <div className="col">
                     <form>
@@ -48,8 +40,6 @@ class AthletePalpation extends Component {
                     <img src="https://cdn0.iconfinder.com/data/icons/sport-people-1/512/sport_-_sportsman_-_people_-_athlete-08-512.png" className="img-fluid h-100" alt="Athlete"></img>
                 </div>
             </div>
-            <button id="referenceButton" type="button" className="btn btn-dark btn-lg float-left mt-3">References</button>
-        </div>
         );
     }
 }

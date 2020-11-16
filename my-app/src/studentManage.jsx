@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const columns = [
   {field: 'id', headerName: "ID", width: 130},
-  {field: 'name', headerName: "Name", width: 130},
+  {field: 'name', headerName: "Name", width: 200},
   {field: 'lastPlayed', headerName: "Last Played", width: 130},
   {field: 'athleteStatus', headerName: 'Athletes', width: 300}
 ]
@@ -15,7 +15,9 @@ const columns = [
   axios.get('http://localhost:5000/players/').then(res => studentList = res.data);
 
 
-class ManageScenario extends Component {
+class ManageStudent extends Component {
+
+  //list to hold collection documents
   constructor(props) {
     super(props);
 
@@ -24,9 +26,13 @@ class ManageScenario extends Component {
     for(var i = 0; i < studentList.length; i++){
 
       obj.push({
-        id: studentList[i].PID, name: studentList[i].PName, LastPlayed: studentList[i].LastPlay, athleteStatus: studentList[i].AthList.length
+        id: studentList[i].PID,
+        name: studentList[i].PName,
+        lastPlayed: studentList[i].LastPlay.substring(0, 10),
+        athleteStatus: studentList[i].AthList.length
       });
     }
+
     this.state = {searchID: null,
                   searchTitle: '',
                   obj
@@ -47,7 +53,7 @@ class ManageScenario extends Component {
   render() { 
     return (  
       <div>
-        <div className="scenarioManageSearch">
+        <div className="studentManageSearch">
           <form onSubmit={this.handleSubmit}>
             <h1>Manage: {this.state.searchID}{this.state.searchTitle}</h1>
             <label>
@@ -70,4 +76,4 @@ class ManageScenario extends Component {
   }
 }
  
-export default ManageScenario;
+export default ManageStudent;

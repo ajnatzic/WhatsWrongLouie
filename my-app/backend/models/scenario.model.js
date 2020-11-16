@@ -17,6 +17,7 @@ const Schema = mongoose.Schema;
  }, {
    
    timestamps: true,
+   collection: 'scenario'
  
 
  });
