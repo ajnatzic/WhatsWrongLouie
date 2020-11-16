@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
+import { Navbar } from 'react-bootstrap';
 
-class NavBar extends Component {
-    render() { 
-        return (  
-            // Basic nav bar (shows on every screen)
-                <div className="container">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        {/* TODO: add hrefs to <a> tags */}
-                        <a href="/" className="navbar-brand">Whats wrong with the Lakers?</a>
-
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
-                                <li className="nav-item active">
-                                    <a href="/" className="nav-link">Home <span className="sr-only">(current)</span></a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link">Account Settings</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link">Help</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-            </div>
-                );
+class AthleteNavBar extends Component {
+    render() {
+        return (
+            <>
+                <Navbar bg="dark" variant="dark" className="my-2" >
+                    <Navbar.Brand href="#home">
+                    <img
+                        alt=""
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Grand_Valley_State_Lakers_logo.svg/1200px-Grand_Valley_State_Lakers_logo.svg.png"
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                    />{' '}
+                    Whats Wrong With the Lakers?
+                    </Navbar.Brand>
+                </Navbar>
+            </>
+        );
     }
 }
- 
-export default NavBar;
+
+export default AthleteNavBar;

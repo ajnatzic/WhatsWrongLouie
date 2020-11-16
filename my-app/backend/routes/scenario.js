@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 let Scenario = require('../models/scenario.model');
 
-// handles incoming HTTP GET requests on the /athlete/ url path
+// handles incoming HTTP GET requests on the /scenario/ url path
+// NOTE: Returns undefined. 
 router.route('/').get((req, res) => {
   Scenario.find()
     .then(scenario => res.json(scenario))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-
 // handles incoming HTTP POST requests on the /athlete/ath_create/
 router.route('/scen_create').post((req, res) => {
 

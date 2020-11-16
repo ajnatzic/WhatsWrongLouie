@@ -1,30 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import './style.css';
 //import App from './App';
-import Header from './header'
-import Main from './main'
 import * as serviceWorker from './serviceWorker';
-
-// NavBar (shows on every athlete screen)
-import NavBar from './athleteNavbar';
-
-// Athlete Screen
-import AthleteScreen from './athleteScreen';
 
 // Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 
+const SuperUser = lazy(() => import('./main'));
+const User = lazy(() => import('./athleteScreen'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Main />
-
-    {/* <NavBar />
-    <AthleteScreen /> */}
+  <Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Switch>
+        <Route exact path="/" component={SuperUser}/>
+        <Route path="/student" component={User}/>
+      </Switch>
+    </Suspense>
+  </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

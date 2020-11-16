@@ -3,15 +3,7 @@ import React, { Component } from 'react';
 class AthleteTreatmentScreen extends Component {
     render() {
         return (
-            <div className="container">
-                
-                {/* Back Button */}
-                <div className="row">
-                    <button id="treatButton" type="button" className="btn btn-danger btn-lg float-left m-2">Back</button>
-                    <div className="p-3 w-auto my-2 bg-secondary text-white">Treatment</div>
-                </div>
-            {/* TODO: change p tags to labels */}
-                <div className="my-10">
+                <div className="my-10"> {/* TODO: change p tags to labels */}
                     <p className="text-left">
                     Police: protect will determine if and how the athlete should protect themselves during their injury.
                     </p>
@@ -53,13 +45,8 @@ class AthleteTreatmentScreen extends Component {
                     </div>
 
 
-                {/* Submit Button */}
-                <button type="submit" class="btn btn-primary float-left mt-3">Submit</button>
-                
+                    <button type="submit" class="btn btn-primary float-left mt-3">Submit</button>
                 </div>
-
-                <button id="referenceButton" type="button" className="btn btn-dark btn-lg float-left">References</button>
-            </div>
         );
     }
 }
