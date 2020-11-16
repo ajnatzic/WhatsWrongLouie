@@ -22,7 +22,7 @@ import Error from './errorPage';
 import AthleteReferencesScreen from './athleteReferencesScreen';
 import AthleteSettingsScreen from './athleteSettingsScreen';
 
-import NavBar from './athleteNavbar';
+import AthleteNavBar from './athleteNavbar';
 
 
 
@@ -295,7 +295,7 @@ class AthleteScreen extends Component {
         }
         return (
             <div className="container text-center h-auto position-relative">
-                <NavBar />
+                <AthleteNavBar />
                 {renderStatus()}
             </div>);
     }
