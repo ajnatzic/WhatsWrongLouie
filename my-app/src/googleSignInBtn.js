@@ -20,6 +20,13 @@ class GoogleSignInBtn extends Component {
 	}
 
 	login(response) {
+		const userInfo = {
+			Name: response.profileObj.name,
+			email: response.profileObj.email,
+			token: response.accessToken,
+			ProviderId: 'Google'
+		};
+		console.log(userInfo);
 		if (response.accessToken) {
 			this.setState(state => ({
 				isLoggedIn: true,
