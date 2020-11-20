@@ -10,21 +10,36 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/find_byEmail').get((req, res) => {  
+  Players.findOne({"Email" : req.query.email})
+    .then(players => res.json(players))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 // handles incoming HTTP POST requests on the /athlete/ath_create/
 router.route('/player_create').post((req, res) => {
 
+  console.log(req.params.Name);
   //gathering user input from athlete creation screen
   var PID = setID();
-  var PName;
+  var PName = req.query.Name;
+  var Email = req.query.email;
   var Athlist = [];
   var LastPlay = new Date();
-  var IiD;
+  var IiD = 30000000;
 
+  console.log(PID + PName + Email + Athlist + LastPlay + IiD);
   const newPlayer = new Players({
       
+    PID,
+    PName,
+    Email,
+    Athlist,
+    LastPlay,
+    IiD
   });
 
-  console.log(newplayer);
+  console.log(newPlayer);
   
   newPlayer.save()
     .then(() => res.json('player added!'))

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import axios from 'axios';
 
 const CLIENT_ID = '137684248623-t73c4bv62fmu1q4hbh5v7idgnfndffjv.apps.googleusercontent.com';
 
@@ -20,13 +21,34 @@ class GoogleSignInBtn extends Component {
 	}
 
 	login(response) {
-		const userInfo = {
-			Name: response.profileObj.name,
-			email: response.profileObj.email,
-			token: response.accessToken,
-			ProviderId: 'Google'
-		};
-		console.log(userInfo);
+		var Name = response.profileObj.name;
+		var email = response.profileObj.email;
+		var token = response.accessToken;
+		var ProviderId = 'Google'
+
+		var getResult;
+
+		axios.get('http://localhost:5000/players/find_byEmail/', {
+			params: {
+				Name,
+				email
+			}
+		}).
+		then(res => getResult = res.data);
+			
+		if(getResult == null){
+
+			axios.post('http://localhost:5000/players/player_create/', {
+				query: {
+					Name,
+					email
+				}
+			}).then(res => console.log(res.data));
+		}
+		else{
+			console.log(getResult);
+		}
+
 		if (response.accessToken) {
 			this.setState(state => ({
 				isLoggedIn: true,

@@ -34,7 +34,7 @@ router.route('/force-injury/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// handles incoming HTTP GET requests on the /edit-athlete/ url path
+// handles incoming HTTP GET requests on the /update-athlete/ url path
 router.route('/update-athlete/').put((req, res, next) => {
   Athlete.findOneAndUpdate({AID: req.params.AID}, {
     $set: req.body
