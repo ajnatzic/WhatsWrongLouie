@@ -26,6 +26,7 @@ class GoogleSignInBtn extends Component {
 		var token = response.accessToken;
 		var ProviderId = 'Google'
 
+		console.log(email);
 		var getResult;
 
 		axios.get('http://localhost:5000/players/find_byEmail/', {
@@ -34,20 +35,20 @@ class GoogleSignInBtn extends Component {
 				email
 			}
 		}).
-		then(res => getResult = res.data);
+		then(res => console.log(res.data));
 			
-		if(getResult == null){
+		// if(getResult == null){
 
-			axios.post('http://localhost:5000/players/player_create/', {
-				query: {
-					Name,
-					email
-				}
-			}).then(res => console.log(res.data));
-		}
-		else{
-			console.log(getResult);
-		}
+		// 	axios.post( 'http://localhost:5000/players/player_create/', {
+		// 		body: {
+		// 			Name,
+		// 			email
+		// 		}
+		// 	}).then(res => console.log(res.data));
+		// }
+		// else{
+		// 	console.log(getResult);
+		// }
 
 		if (response.accessToken) {
 			this.setState(state => ({
