@@ -6,3 +6,5 @@ Sprint 1 completed October 5th.
 Sprint 2 completed October 19th.
 
 Sprint 3 completed November 2nd.
+
+Sprint 4 completed November 16th.
