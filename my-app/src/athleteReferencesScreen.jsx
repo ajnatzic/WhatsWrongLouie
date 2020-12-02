@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class AthleteReferencesScreen extends Component {
     render() {
         return (
-            <div className='container'>
+            <>
                 <div className="card-deck">
 
                     <div className="card text-left">
@@ -26,7 +26,7 @@ class AthleteReferencesScreen extends Component {
 
 
                 </div>
-            </div>
+            </>
         );
     }
 }
