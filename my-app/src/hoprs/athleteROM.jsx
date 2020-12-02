@@ -1,4 +1,14 @@
 import React, { Component } from 'react';
+/**
+ * Currently, the Athlete ROM (Range of Motion) mini-game is static. 
+ * 
+ * The intended flow of this mini-game is as follows:
+ * 
+ * 1. The player should be able to move the joints of the athlete model to determine a range of motion
+ * 
+ * 2. If the player notices limited range of motion in any of the limbs, they can take note of this limb and submit their answer using the <select> box
+ *    
+ */
 class AthleteROM extends Component {
     render() {
         return (
@@ -12,9 +22,11 @@ class AthleteROM extends Component {
                         <div className="input-group-prepend">
                             <label className="input-group-text">{'Low range: '}</label>
                         </div>
+                        {/* Player will select their answer here based on which limb they believe to have low range of motion */}
                         <select className="custom-select">
-                            <option value="1">{'Right Shoulder'}</option>
-                            <option value="2">{'Left Shoulder'}</option>
+                            <option value="1">{'None'}</option>
+                            <option value="2">{'Right Shoulder'}</option>
+                            <option value="3">{'Left Shoulder'}</option>
                         </select>
                     </div>
                     
