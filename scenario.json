@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "5f7234f61ad1c64ed3799566"
+  },
+  "SID": 40000000,
+  "SName": "Broken Arm",
+  "SReview": "The athlete has a broken arm",
+  "SCreated": {
+    "$date": "2020-02-02T05:00:00Z"
+  },
+  "LastEdited": {
+    "$date": "2020-02-02T05:00:00Z"
+  },
+  "SCat": [
+    "Severe",
+    "Arm"
+  ],
+  "SData": {
+    "History": {
+      "HStory": "The athlete fell hard after a tackle during football practice. The arm is hard to move.",
+      "HKeyword": [
+        "arm",
+        "fell"
+      ],
+      "HReveal": [
+        "The athletes arm looks visibly hurt.",
+        "The fall may have caused a fracture."
+      ],
+      "HAnswer": [
+        true,
+        true
+      ]
+    },
+    "Observation": {
+      "OPoint": [
+        {
+          "OCoordX": {
+            "$numberDecimal": "12.2"
+          },
+          "OCoordY": {
+            "$numberDecimal": "13.1"
+          },
+          "ODescript": "This bone is clearly fractured.",
+          "OImage": "NULL"
+        },
+        {
+          "OCoordX": "12.3",
+          "OCoordY": "13.3",
+          "ODescript": "NULL",
+          "OImage": "www.imageofbrokenbone.com"
+        }
+      ],
+      "OAnswers": [
+        "Fractured Bone",
+        "Inflammation"
+      ]
+    },
+    "Palpation": {
+      "PPoint": [
+        {
+          "PCoordX": {
+            "$numberDecimal": "12.2"
+          },
+          "PCoordY": {
+            "$numberDecimal": "13.5"
+          },
+          "PMaxPain": 10,
+          "PDescript": "Fractured Bone"
+        },
+        {
+          "PCoordX": {
+            "$numberDecimal": "12.3"
+          },
+          "PCoordY": {
+            "$numberDecimal": "13.4"
+          },
+          "PMaxPain": 10,
+          "PDescript": "Inflammation"
+        }
+      ],
+      "PAnswers": [
+        "Fractured Bone",
+        "Inflammation"
+      ]
+    },
+    "ROM": {},
+    "SpecTest": {
+      "SpecTestAnswers": [
+        "Special Test 1",
+        "Special Test 2"
+      ]
+    },
+    "Treatment": {}
+  }
+},{
+  "_id": {
+    "$oid": "5fa2e0bba278500785c48116"
+  },
+  "SID": 40000001,
+  "SName": "Broken Leg",
+  "SReview": "The athlete has a broken Leg",
+  "SCreated": {
+    "$date": "2020-02-02T05:00:00Z"
+  },
+  "LastEdited": {
+    "$date": "2020-02-02T05:00:00Z"
+  },
+  "SCat": [
+    "Severe",
+    "Leg"
+  ],
+  "SData": {
+    "History": {
+      "HStory": "The athlete fell hard after a tackle during football practice. The arm is hard to move.",
+      "HKeyword": [
+        "Leg",
+        "fell"
+      ],
+      "HReveal": [
+        "The athletes Leg looks visibly hurt.",
+        "The fall may have caused a fracture."
+      ],
+      "HAnswer": [
+        true,
+        true
+      ]
+    },
+    "Observation": {
+      "OPoint": [
+        {
+          "OCoordX": {
+            "$numberDecimal": "12.2"
+          },
+          "OCoordY": {
+            "$numberDecimal": "13.1"
+          },
+          "ODescript": "This bone is clearly fractured.",
+          "OImage": "NULL"
+        },
+        {
+          "OCoordX": "12.3",
+          "OCoordY": "13.3",
+          "ODescript": "NULL",
+          "OImage": "www.imageofbrokenbone.com"
+        }
+      ],
+      "OAnswers": [
+        "Fractured Bone",
+        "Inflammation"
+      ]
+    },
+    "Palpation": {
+      "PPoint": [
+        {
+          "PCoordX": {
+            "$numberDecimal": "12.2"
+          },
+          "PCoordY": {
+            "$numberDecimal": "13.5"
+          },
+          "PMaxPain": 10,
+          "PDescript": "Fractured Bone"
+        },
+        {
+          "PCoordX": {
+            "$numberDecimal": "12.3"
+          },
+          "PCoordY": {
+            "$numberDecimal": "13.4"
+          },
+          "PMaxPain": 10,
+          "PDescript": "Inflammation"
+        }
+      ],
+      "PAnswers": [
+        "Fractured Bone",
+        "Inflammation"
+      ]
+    },
+    "ROM": {},
+    "SpecTest": {
+      "SpecTestAnswers": [
+        "Special Test 1",
+        "Special Test 2"
+      ]
+    },
+    "Treatment": {}
+  }
+}]

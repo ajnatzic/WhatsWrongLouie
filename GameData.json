@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "5f7f2f40d5aae13e19282d81"
+  },
+  "PriorInjuryList": {
+    "50 00 00 00": "Injury1",
+    "50 00 00 01": "Injury2"
+  },
+  "PalpationList": {
+    "51 00 00 00": "Palpation1",
+    "51 00 00 01": "Palpation2"
+  },
+  "ObservationList": {
+    "52 00 00 00": "Observation1",
+    "52 00 00 01": "Observation2"
+  },
+  "SpecialTestList": {
+    "53 00 00 00": "SpecialTest1",
+    "53 00 00 01": "SpecialTest2"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f47ded5aae13e19282d84"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f4de0d5aae13e19282d85"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f4e20d5aae13e19282d86"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f4e2bd5aae13e19282d87"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f4e6dd5aae13e19282d88"
+  }
+}]
