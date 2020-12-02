@@ -9,6 +9,7 @@ const Schema = mongoose.Schema;
  const playersSchema = new Schema({
    PID: {type: Number, required: true},
    PName: {type: String, required: true},
+   Email: {type: String, required: true},
    AthList: {type: Array, required: true},
    LastPlay: {type: Date, required: true},
    IiD: {type: Number, required: true}
