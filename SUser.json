@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "5f722b021ad1c64ed3799564"
+  },
+  "SUID": 30000000,
+  "SUName": "Meghan Fox",
+  "PlayerList": [
+    10000000,
+    10000001
+  ],
+  "LastPlay": {
+    "$date": "2020-01-01T05:00:00Z"
+  }
+},{
+  "_id": {
+    "$oid": "5f722c7b1ad1c64ed3799565"
+  },
+  "SUID": 30000001,
+  "SUName": "Eliza MacDonald",
+  "PlayerList": [
+    10000002
+  ],
+  "LastPlay": {
+    "$date": "2020-01-01T05:00:00Z"
+  }
+}]

@@ -1,0 +1,1201 @@
+[{
+  "_id": {
+    "$oid": "5f7220d31ad1c64ed379955e"
+  },
+  "AID": 20000000,
+  "AthName": "James",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Ivory",
+  "TShColor": "Red",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40008083,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000000
+},{
+  "_id": {
+    "$oid": "5f9991f09c3f2343404fc6f4"
+  },
+  "AID": 20000001,
+  "AthName": "Bella",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "Blue",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40008083,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000000
+},{
+  "_id": {
+    "$oid": "5f9992059c3f2343404fc6f5"
+  },
+  "AID": 20000002,
+  "AthName": "Tillie",
+  "Race": "Native",
+  "Gender": "Female",
+  "SkColor": "Sienna",
+  "TShColor": "White",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40008083,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000000
+},{
+  "_id": {
+    "$oid": "5f9992089c3f2343404fc6f6"
+  },
+  "AID": 20000003,
+  "AthName": "Charley",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Umber",
+  "TShColor": "Black",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40008083,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000001
+},{
+  "_id": {
+    "$oid": "5f99920d9c3f2343404fc6f7"
+  },
+  "AID": 20000004,
+  "AthName": "Naeem",
+  "Race": "Asian",
+  "Gender": "Female",
+  "SkColor": "Honey",
+  "TShColor": "Yellow",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000001
+},{
+  "_id": {
+    "$oid": "5f9992149c3f2343404fc6f8"
+  },
+  "AID": 20000005,
+  "AthName": "Elvis",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Sand",
+  "TShColor": "Green",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000001
+},{
+  "_id": {
+    "$oid": "5f9992189c3f2343404fc6f9"
+  },
+  "AID": 20000006,
+  "AthName": "Esther",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Limestone",
+  "TShColor": "Pink",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000002
+},{
+  "_id": {
+    "$oid": "5f99921d9c3f2343404fc6fa"
+  },
+  "AID": 20000007,
+  "AthName": "Abby",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Espresso",
+  "TShColor": "Grey",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000002
+},{
+  "_id": {
+    "$oid": "5f9992219c3f2343404fc6fb"
+  },
+  "AID": 20000008,
+  "AthName": "Eilish",
+  "Race": "Hispanic",
+  "Gender": "Female",
+  "SkColor": "Bronze",
+  "TShColor": "Red",
+  "PantColor": "Grey",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000002
+},{
+  "_id": {
+    "$oid": "5f9992259c3f2343404fc6fc"
+  },
+  "AID": 20000009,
+  "AthName": "Eva",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Beige",
+  "TShColor": "Pink",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000003
+},{
+  "_id": {
+    "$oid": "5f9992299c3f2343404fc6fd"
+  },
+  "AID": 20000010,
+  "AthName": "Muhammed",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Chestnut",
+  "TShColor": "Brown",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000003
+},{
+  "_id": {
+    "$oid": "5f99923c9c3f2343404fc6fe"
+  },
+  "AID": 20000011,
+  "AthName": "Larry",
+  "Race": "Asian",
+  "Gender": "Male",
+  "SkColor": "Almond",
+  "TShColor": "Green",
+  "PantColor": "Yellow",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000003
+},{
+  "_id": {
+    "$oid": "5f9992419c3f2343404fc6ff"
+  },
+  "AID": 20000012,
+  "AthName": "Vincent",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Ivory",
+  "TShColor": "Blue",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000004
+},{
+  "_id": {
+    "$oid": "5f9992469c3f2343404fc700"
+  },
+  "AID": 20000013,
+  "AthName": "Akeel",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Rose Beige",
+  "TShColor": "Black",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000004
+},{
+  "_id": {
+    "$oid": "5f99924b9c3f2343404fc701"
+  },
+  "AID": 20000014,
+  "AthName": "Rahma",
+  "Race": "Pacific",
+  "Gender": "Male",
+  "SkColor": "Almond",
+  "TShColor": "Blue",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000004
+},{
+  "_id": {
+    "$oid": "5f9992509c3f2343404fc702"
+  },
+  "AID": 20000015,
+  "AthName": "Norman",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Porcelain",
+  "TShColor": "White",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000005
+},{
+  "_id": {
+    "$oid": "5f9992559c3f2343404fc703"
+  },
+  "AID": 20000016,
+  "AthName": "Shyam",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "White",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000005
+},{
+  "_id": {
+    "$oid": "5f9992599c3f2343404fc704"
+  },
+  "AID": 20000017,
+  "AthName": "Giles",
+  "Race": "Asian",
+  "Gender": "Male",
+  "SkColor": "Band",
+  "TShColor": "Green",
+  "PantColor": "Green",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000005
+},{
+  "_id": {
+    "$oid": "5f99925e9c3f2343404fc705"
+  },
+  "AID": 20000018,
+  "AthName": "Sheldon",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Ivory",
+  "TShColor": "Black",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000006
+},{
+  "_id": {
+    "$oid": "5f9992639c3f2343404fc706"
+  },
+  "AID": 20000019,
+  "AthName": "Tayyibah",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "Yellow",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000006
+},{
+  "_id": {
+    "$oid": "5f99926b9c3f2343404fc707"
+  },
+  "AID": 20000020,
+  "AthName": "Jodie",
+  "Race": "Native",
+  "Gender": "Female",
+  "SkColor": "Almond",
+  "TShColor": "Pink",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000006
+},{
+  "_id": {
+    "$oid": "5f9992709c3f2343404fc708"
+  },
+  "AID": 20000021,
+  "AthName": "Devante",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Golden",
+  "TShColor": "Blue",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000007
+},{
+  "_id": {
+    "$oid": "5f9992979c3f2343404fc709"
+  },
+  "AID": 20000022,
+  "AthName": "Hanan",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Almond",
+  "TShColor": "White",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000007
+},{
+  "_id": {
+    "$oid": "5f99929c9c3f2343404fc70a"
+  },
+  "AID": 20000023,
+  "AthName": "Celeste",
+  "Race": "Pacific",
+  "Gender": "Female",
+  "SkColor": "Umber",
+  "TShColor": "Pink",
+  "PantColor": "Blue",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000007
+},{
+  "_id": {
+    "$oid": "5f9992ae9c3f2343404fc70b"
+  },
+  "AID": 20000024,
+  "AthName": "Reilly",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Pale Ivory",
+  "TShColor": "Blue",
+  "PantColor": "Green",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000008
+},{
+  "_id": {
+    "$oid": "5f9992b49c3f2343404fc70c"
+  },
+  "AID": 20000025,
+  "AthName": "Alisha",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "Green",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000008
+},{
+  "_id": {
+    "$oid": "5f9992b99c3f2343404fc70d"
+  },
+  "AID": 20000026,
+  "AthName": "Jamel",
+  "Race": "Native",
+  "Gender": "Male",
+  "SkColor": "Sand",
+  "TShColor": "Pink",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000008
+},{
+  "_id": {
+    "$oid": "5f9992bd9c3f2343404fc70e"
+  },
+  "AID": 20000027,
+  "AthName": "Sherry",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Warm Ivory",
+  "TShColor": "Black",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000009
+},{
+  "_id": {
+    "$oid": "5f9992c69c3f2343404fc70f"
+  },
+  "AID": 20000028,
+  "AthName": "Kelise",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "White",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000009
+},{
+  "_id": {
+    "$oid": "5f9992cb9c3f2343404fc710"
+  },
+  "AID": 20000029,
+  "AthName": "Yousif",
+  "Race": "Hispanic",
+  "Gender": "Male",
+  "SkColor": "Honey",
+  "TShColor": "Blue",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000009
+},{
+  "_id": {
+    "$oid": "5f9992cf9c3f2343404fc711"
+  },
+  "AID": 20000030,
+  "AthName": "Debra",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Limestone",
+  "TShColor": "White",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000010
+},{
+  "_id": {
+    "$oid": "5f9992d39c3f2343404fc712"
+  },
+  "AID": 20000031,
+  "AthName": "Carol",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Bronze",
+  "TShColor": "Black",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000010
+},{
+  "_id": {
+    "$oid": "5f9992d89c3f2343404fc713"
+  },
+  "AID": 20000032,
+  "AthName": "Sharon",
+  "Race": "Asian",
+  "Gender": "Female",
+  "SkColor": "Almond",
+  "TShColor": "Yellow",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000010
+},{
+  "_id": {
+    "$oid": "5f9992dd9c3f2343404fc714"
+  },
+  "AID": 20000033,
+  "AthName": "Lainey",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Pale Ivory",
+  "TShColor": "Green",
+  "PantColor": "Green",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000011
+},{
+  "_id": {
+    "$oid": "5f9992e19c3f2343404fc715"
+  },
+  "AID": 20000034,
+  "AthName": "Chris",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Chocolate",
+  "TShColor": "Black",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000011
+},{
+  "_id": {
+    "$oid": "5f9992e79c3f2343404fc716"
+  },
+  "AID": 20000035,
+  "AthName": "Elena",
+  "Race": "Asian",
+  "Gender": "Female",
+  "SkColor": "Sienna",
+  "TShColor": "Grey",
+  "PantColor": "Grey",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000011
+},{
+  "_id": {
+    "$oid": "5f9992ec9c3f2343404fc717"
+  },
+  "AID": 20000036,
+  "AthName": "Harlow",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Sand",
+  "TShColor": "Black",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000012
+},{
+  "_id": {
+    "$oid": "5f9992f09c3f2343404fc718"
+  },
+  "AID": 20000037,
+  "AthName": "Emma",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Chocolate",
+  "TShColor": "Pink",
+  "PantColor": "Pink",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000012
+},{
+  "_id": {
+    "$oid": "5f9992f59c3f2343404fc719"
+  },
+  "AID": 20000038,
+  "AthName": "Lidia",
+  "Race": "Hispanic",
+  "Gender": "Female",
+  "SkColor": "Almond",
+  "TShColor": "Red",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000012
+},{
+  "_id": {
+    "$oid": "5f9992f99c3f2343404fc71a"
+  },
+  "AID": 20000039,
+  "AthName": "Drake",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Rose Beige",
+  "TShColor": "Pink",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000013
+},{
+  "_id": {
+    "$oid": "5f9992fe9c3f2343404fc71b"
+  },
+  "AID": 20000040,
+  "AthName": "Halimah",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Espresso",
+  "TShColor": "White",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000013
+},{
+  "_id": {
+    "$oid": "5f99931d9c3f2343404fc71c"
+  },
+  "AID": 20000041,
+  "AthName": "Alasdair",
+  "Race": "Pacific",
+  "Gender": "Male",
+  "SkColor": "Sand",
+  "TShColor": "Black",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000013
+},{
+  "_id": {
+    "$oid": "5f9993229c3f2343404fc71d"
+  },
+  "AID": 20000042,
+  "AthName": "Zena",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Rose Beige",
+  "TShColor": "Pink",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000014
+},{
+  "_id": {
+    "$oid": "5f9993279c3f2343404fc71e"
+  },
+  "AID": 20000043,
+  "AthName": "Constance",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Umber",
+  "TShColor": "Red",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000014
+},{
+  "_id": {
+    "$oid": "5f99932c9c3f2343404fc71f"
+  },
+  "AID": 20000044,
+  "AthName": "Zunaira",
+  "Race": "Native",
+  "Gender": "Female",
+  "SkColor": "Sand",
+  "TShColor": "Brown",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000014
+},{
+  "_id": {
+    "$oid": "5f9993319c3f2343404fc720"
+  },
+  "AID": 20000045,
+  "AthName": "Tyson",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Espresso",
+  "TShColor": "Black",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000015
+},{
+  "_id": {
+    "$oid": "5f9993359c3f2343404fc721"
+  },
+  "AID": 20000046,
+  "AthName": "Saskia",
+  "Race": "Asian",
+  "Gender": "Female",
+  "SkColor": "Honey",
+  "TShColor": "Blue",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000015
+},{
+  "_id": {
+    "$oid": "5f99933a9c3f2343404fc722"
+  },
+  "AID": 20000047,
+  "AthName": "Cai",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Ivory",
+  "TShColor": "White",
+  "PantColor": "White",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000015
+},{
+  "_id": {
+    "$oid": "5f99933e9c3f2343404fc723"
+  },
+  "AID": 20000048,
+  "AthName": "Mysha",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Pale Ivory",
+  "TShColor": "Pink",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000016
+},{
+  "_id": {
+    "$oid": "5f9993439c3f2343404fc724"
+  },
+  "AID": 20000049,
+  "AthName": "Darragh",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Umber",
+  "TShColor": "Red",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000016
+},{
+  "_id": {
+    "$oid": "5f9993469c3f2343404fc725"
+  },
+  "AID": 20000050,
+  "AthName": "Jakub",
+  "Race": "Native",
+  "Gender": "Male",
+  "SkColor": "Almond",
+  "TShColor": "Brown",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000016
+},{
+  "_id": {
+    "$oid": "5f99934a9c3f2343404fc726"
+  },
+  "AID": 20000051,
+  "AthName": "Efe",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Sand",
+  "TShColor": "Blue",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000017
+},{
+  "_id": {
+    "$oid": "5f99934f9c3f2343404fc727"
+  },
+  "AID": 20000052,
+  "AthName": "Dimitri",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Golden",
+  "TShColor": "Red",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000017
+},{
+  "_id": {
+    "$oid": "5f9993549c3f2343404fc728"
+  },
+  "AID": 20000053,
+  "AthName": "Lilly",
+  "Race": "Pacific",
+  "Gender": "Female",
+  "SkColor": "Chestnut",
+  "TShColor": "White",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000017
+},{
+  "_id": {
+    "$oid": "5f9993579c3f2343404fc729"
+  },
+  "AID": 20000054,
+  "AthName": "Todd",
+  "Race": "White",
+  "Gender": "Male",
+  "SkColor": "Warm Ivory",
+  "TShColor": "Green",
+  "PantColor": "Grey",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000018
+},{
+  "_id": {
+    "$oid": "5f9993609c3f2343404fc72a"
+  },
+  "AID": 20000055,
+  "AthName": "Ahyan",
+  "Race": "Black",
+  "Gender": "Male",
+  "SkColor": "Umber",
+  "TShColor": "Black",
+  "PantColor": "Black",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000018
+},{
+  "_id": {
+    "$oid": "5f9993669c3f2343404fc72b"
+  },
+  "AID": 20000056,
+  "AthName": "Nolan",
+  "Race": "Hispanic",
+  "Gender": "Male",
+  "SkColor": "Bronze",
+  "TShColor": "White",
+  "PantColor": "Red",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000018
+},{
+  "_id": {
+    "$oid": "5f99936b9c3f2343404fc72c"
+  },
+  "AID": 20000057,
+  "AthName": "Nakita",
+  "Race": "White",
+  "Gender": "Female",
+  "SkColor": "Ivory",
+  "TShColor": "Grey",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000019
+},{
+  "_id": {
+    "$oid": "5f9993779c3f2343404fc72d"
+  },
+  "AID": 20000058,
+  "AthName": "Eleri",
+  "Race": "Black",
+  "Gender": "Female",
+  "SkColor": "Espresso",
+  "TShColor": "Orange",
+  "PantColor": "Orange",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000019
+},{
+  "_id": {
+    "$oid": "5f99937c9c3f2343404fc72e"
+  },
+  "AID": 20000059,
+  "AthName": "Stuart",
+  "Race": "Asian",
+  "Gender": "Male",
+  "SkColor": "Ivory",
+  "TShColor": "Red",
+  "PantColor": "Brown",
+  "LastInjury": {
+    "$date": "2020-05-13T04:00:00Z"
+  },
+  "CurrScen": 40004040,
+  "LastScen": 0,
+  "CreateDate": {
+    "$date": "2020-05-10T04:00:00Z"
+  },
+  "PID": 10000019
+}]
