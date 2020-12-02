@@ -10,23 +10,69 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/find_byEmail').get((req, res) => {  
+  Players.findOne({"Email" : req.query.email})
+    .then(players => {
+      if(players == null || players == undefined){
+        //gathering user input from athlete creation screen
+        var PID = setID();
+        var PName = req.query.Name;
+        var Email = req.query.email;
+        var Athlist = [];
+        var LastPlay = new Date();
+        var IiD = 30000000;
+
+        console.log(PID + PName + Email + Athlist + LastPlay + IiD);
+        const newPlayer = new Players({
+            
+          PID,
+          PName,
+          Email,
+          Athlist,
+          LastPlay,
+          IiD
+        });
+
+        console.log(newPlayer);
+        
+        db.collection('players').insertOne(newPlayer);
+        // newPlayer.save()
+        //   .then(() => res.json('player added!'))
+        //   .catch(err => res.status(400).json('Error: ' + err));
+      }
+      else{
+        res.json(players);
+      }
+          })
+          .catch(err => res.status(400).json('Error: ' + err));
+});
+
 // handles incoming HTTP POST requests on the /athlete/ath_create/
 router.route('/player_create').post((req, res) => {
 
+  console.log(req.body.Name);
   //gathering user input from athlete creation screen
   var PID = setID();
-  var PName;
+  var PName = req.query.Name;
+  var Email = req.query.email;
   var Athlist = [];
   var LastPlay = new Date();
-  var IiD;
+  var IiD = 30000000;
 
+  console.log(PID + PName + Email + Athlist + LastPlay + IiD);
   const newPlayer = new Players({
       
+    PID,
+    PName,
+    Email,
+    Athlist,
+    LastPlay,
+    IiD
   });
 
-  console.log(newplayer);
+  console.log(newPlayer);
   
-  newPlayer.save()
+  newPlayer.insertOne()
     .then(() => res.json('player added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
@@ -44,25 +90,6 @@ router.route('/:id').delete((req, res) => {
 
   Players.findByIdAndDelete(req.params.id)
   .then(players => res.json('Player Deleted.'))
-  .catch(err => res.status(400).json('Error: ' + err));
-});
-
-// Get single player from DB and update
-router.route('/update/:id').post((req, res) => {
-
-  Players.findById(req.params.id)
-  .then(players => {
-    // TODO
-    // players.PID = 
-    // players.PName = 
-    // players.Athlist = 
-    // players.LastPlay = 
-    // players.IiD = 
-
-    players.save()
-    .then(players => res.json('Player updated.'))
-    .catch(err => res.status(400).json('Error: ' + err));
-  })
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -93,7 +120,7 @@ function setID(){
     var duplicates = []; 
 
     //var to focus on the specific collection passed in
-    const collection = db.collection("players");
+    const collection = db.collection('players');
 
     try{
 
