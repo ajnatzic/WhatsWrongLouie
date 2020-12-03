@@ -1,7 +1,15 @@
 /**
- *  Tyler Hay, Dillon Viilo, AJ Natzic
- *  GVSU Senior Project - Winter 2020
- *  9/30/2020
+ *  Tyler Hay / hayty@mail.gvsu.edu
+ *  GVSU Senior Project - December 2020
+ *  
+ *  This file makes the connection to the MongoDB database and uses the
+ *  Route files to be able to interact with the DB collections.
+ * 
+ *  To connect to the mongoDB db:
+ *  1. In the terminal, go to the directory my-app/backend
+ *  2. Start the server by using the command "nodemon server"
+ * 
+ *  You may have to npm install nodemon if the package is missing.
  * 
  */
 
@@ -14,11 +22,17 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// middleware to parse JSON
+// middleware to parse JSON files
 app.use(cors());
 app.use(express.json());
 
+//This is the URI for the database.
+//The default username is Test and the Default password is Test
+//The database name is currently user_test.
+//These credentials will likely need to be changed to increase DB security
+//in the future, but for now it's convenient for development. 
 const uri = "mongodb+srv://Test:Test@cluster0.ambmi.mongodb.net/user_test?retryWrites=true&w=majority"
+//Connecting to the database using the URI.
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 );
 const connection = mongoose.connection;
@@ -44,20 +58,3 @@ app.use('/GameData', GameDataRouter);
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
-
-
-function onSignIn(googleUser) {
-  // Useful data for your client-side scripts:
-  var profile = googleUser.getBasicProfile();
-  console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-  console.log('Full Name: ' + profile.getName());
-  console.log('Given Name: ' + profile.getGivenName());
-  console.log('Family Name: ' + profile.getFamilyName());
-  console.log("Image URL: " + profile.getImageUrl());
-  console.log("Email: " + profile.getEmail());
-
-  // The ID token you need to pass to your backend:
-  var id_token = googleUser.getAuthResponse().id_token;
-  console.log("ID Token: " + id_token);
-  alert("Welcome, " + profile.getName() + "! Let's fix some athletes.");
-}

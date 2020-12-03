@@ -1,16 +1,48 @@
+/**
+ * Tyler Hay / hayty@mail.gvsu.edu
+ * December 2020
+ * 
+ * Athlete Route
+ * 
+ * This file will serve as the middle-man between the front end and the database
+ * for Super User related queries. Function calls using Axios in the React JS files will call the HTTPS
+ * POST/GET requests in this file for CRUD operations regarding Super Users
+ * 
+ * Note: I don't think there is currently any differentiation between Super Users
+ * and players. The Google Sign In implementation needs to be expanded to recognize
+ * instructor emails (@gvsu.edu) over student emails (@mail.gvsu.edu) and apply the
+ * proper classifications. This will be necessary so normal players can't access the
+ * super user front end where scenario data can be altered. 
+ */
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
+
+//Linking Super User Schema model
 let SUser = require('../models/SUser.model');
 
-// handles incoming HTTP GET requests on the /athlete/ url path
+
+/**
+ * Default GET request. Returns a full list of Super Users in JSON
+ * format. 
+ * 
+ * handles incoming HTTP GET requests on the /SUser/ url path
+ */
 router.route('/').get((req, res) => {
   SUsers.find()
     .then(susers => res.json(susers))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// handles incoming HTTP POST requests on the /athlete/ath_create/
+/**
+ * Default POST request. Creates a new Super User and saves it in
+ * the SUser collection in the database. 
+ * 
+ * handles incoming HTTP POST requests on the /SUser/SUser_create/
+ * 
+ * Note: This could be used to expand the Google Sign In implementation
+ * to differentiate Super Users and players.
+ */
 router.route('/SUser_create').post((req, res) => {
 
   //gathering user input from athlete creation screen
