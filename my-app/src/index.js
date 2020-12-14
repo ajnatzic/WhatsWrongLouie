@@ -3,16 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 import ReactDOM from 'react-dom';
-import './index.css';
 import './style.css';
-//import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 
-const SuperUser = lazy(() => import('./main'));
-const User = lazy(() => import('./athleteScreen'));
+const SuperUser = lazy(() => import('./superuser/main'));
+const User = lazy(() => import('./user/athleteScreen'));
 
 ReactDOM.render(
   <React.StrictMode>
