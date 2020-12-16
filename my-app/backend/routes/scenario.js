@@ -1,16 +1,47 @@
+/**
+ * Tyler Hay / hayty@mail.gvsu.edu
+ * December 2020
+ * 
+ * Athlete Route
+ * 
+ * This file will serve as the middle-man between the front end and the database
+ * for scenario related queries. Function calls using Axios in the React JS files will call the HTTPS
+ * POST/GET requests in this file for CRUD operations regarding scenarios
+ */
+
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-let Scenario = require('../models/scenario.model');
 
-// handles incoming HTTP GET requests on the /scenario/ url path
-// NOTE: Returns undefined. 
+//Linking the scenario schema model
+let Scenario = require('../models/scenario.model'); 
+
+/**
+ * Default GET request for scenarios. Retrurns a full list of 
+ * all scenario documents in JSON format. 
+ * 
+ * handles incoming HTTP GET requests on the /scenario/ url path
+ * 
+ * Note: returning the result will make the JSON undefined.
+ * It's reccomended that CRUD operations for scenario objects stay in this file
+ * instead of passing it back to the front end files.
+ */
 router.route('/').get((req, res) => {
   Scenario.find()
     .then(scenario => res.json(scenario))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-// handles incoming HTTP POST requests on the /athlete/ath_create/
+
+
+/**
+ * POST request to save new scenarios. 
+ * 
+ * handles incoming HTTP POST requests on the /scenario/scen_create/
+ * 
+ * Note: Still a work in progress. The HOPRS minigames need to be
+ * in working order so that the instructor / super user can demo the 
+ * minigames in order to make accurate game data for the scenarios.
+ */
 router.route('/scen_create').post((req, res) => {
 
   //gathering user input from athlete creation screen

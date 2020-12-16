@@ -1,23 +1,49 @@
+/**
+ * Tyler Hay / hayty@mail.gvsu.edu
+ * December 2020
+ * 
+ * Athlete Route
+ * 
+ * This file will serve as the middle-man between the front end and the database
+ * for athlete related queries. Function calls using Axios in the React JS files will call the HTTPS
+ * POST/GET requests in this file for CRUD operations regarding athletes
+ */
+
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
+
+//Linking the athlete Schema model
 let Athlete = require('../models/athlete.model.js');
 
-// handles incoming HTTP GET requests on the /athlete/ url path
+/**
+ * Default GET request. Returns full list of athlete documents
+ * in a JSON format. 
+ */
 router.route('/').get((req, res) => {
   Athlete.find()
     .then(athlete => res.json(athlete))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// Get request to force injury on uninjured athletes
+/**
+ * GET request used for the Super User
+ * Force injury feature. Instructors and force injuries 
+ * onto athletes to make sure students practice specific
+ * injuries.
+ */
 router.route('/force-injury/').get((req, res) => {
+  //Searching for athletes based on the Athlete ID being passed in the req param
   Athlete.findOne({"AID": parseInt(req.query.AID)})
     .then(athlete => {
       
+      //Checking if the athlete has a set injury already
       if(athlete.CurrScen === 0){
 
+        //If they don't have a set injury, give the athlete the injury in the req param.
         athlete.CurrScen = req.query.Scen;
+
+        //Update the athlete in the database.
         Athlete.findOneAndUpdate({"AID": parseInt(req.query.AID)}, {
           $set: athlete
         }, (error,data) => {
@@ -34,7 +60,14 @@ router.route('/force-injury/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// handles incoming HTTP GET requests on the /update-athlete/ url path
+
+/**
+ * Default POST request to update athlete documents.
+ * Searches for an athlete based on the Athlete ID and updates it
+ * with the rest of the req params.
+ * 
+ *  handles incoming HTTP GET requests on the /update-athlete/ url path
+ */
 router.route('/update-athlete/').put((req, res, next) => {
   Athlete.findOneAndUpdate({AID: req.params.AID}, {
     $set: req.body
@@ -48,7 +81,14 @@ router.route('/update-athlete/').put((req, res, next) => {
   })
 });
 
-// handles incoming HTTP POST requests on the /athlete/ath_create/
+/**
+ * Default POST request to put a new athlete in the database. 
+ * The req param in the POST request contains athlete attributes to
+ * make a new athlete object. The athlete is then saved in the athlete
+ * collection in the database. 
+ * 
+ * handles incoming HTTP POST requests on the /athlete/ath_create/
+ */
 router.route('/ath_create').post((req, res) => {
 
   //gathering user input from athlete creation screen

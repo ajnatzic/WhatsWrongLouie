@@ -13,8 +13,8 @@ class AthleteNavBar extends Component {
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
-                    />{' '}
-                    Whats Wrong With the Lakers?
+                    />{'Whats Wrong With the Lakers?'}
+                    
                     </Navbar.Brand>
                 </Navbar>
             </>

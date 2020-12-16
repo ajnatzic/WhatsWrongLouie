@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Col, Row } from "react-bootstrap";
 
-import AthleteNavBar from './athleteNavbar';
-import AthleteCreateScreen from './athleteCreateForm';
-import AthleteReferencesScreen from './athleteReferencesScreen';
-import AthleteSettingsScreen from './athleteSettingsScreen';
-import AthleteTeamScreen from './athleteTeamScreen';
-import AthleteTreatmentScreen from './athleteTreatmentScreen';
-import Error from './errorPage';
+import AthleteNavBar from './components/athleteNavbar';
+import AthleteCreateScreen from './components/athleteCreateForm';
+import AthleteReferencesScreen from './components/athleteReferencesScreen';
+import AthleteSettingsScreen from './components/athleteSettingsScreen';
+import AthleteTeamScreen from './components/athleteTeamScreen';
+import AthleteTreatmentScreen from './components/athleteTreatmentScreen';
+import Error from '../errorPage';
 
 /** HOPRS mini-games */
-import AthleteHistory from './hoprs/athleteHistory';
-import AthleteObservation from './hoprs/athleteObservation';
-import AthletePalpation from './hoprs/athletePalpation';
-import AthleteROM from './hoprs/athleteROM';
-import AthleteSpecialTests from './hoprs/athleteSpecialTest';
+import AthleteHistory from './components/hoprs/athleteHistory';
+import AthleteObservation from './components/hoprs/athleteObservation';
+import AthletePalpation from './components/hoprs/athletePalpation';
+import AthleteROM from './components/hoprs/athleteROM';
+import AthleteSpecialTests from './components/hoprs/athleteSpecialTest';
 
 class AthleteScreen extends Component {
     constructor(props) {
