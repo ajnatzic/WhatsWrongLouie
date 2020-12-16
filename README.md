@@ -10,3 +10,5 @@ Sprint 3 completed November 2nd.
 Sprint 4 completed November 16th.
 
 Sprint 5 completed December 2nd.
+
+Final deliverable completed December 16th.
